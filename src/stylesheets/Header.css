@@ -1,0 +1,13 @@
+.header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 8vh;
+    z-index: 1;
+    background: var(--header-color-background); }
+    .header img{
+        position: relative;
+        height: 100%;
+        margin-left: 2rem; }

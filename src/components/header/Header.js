@@ -11,7 +11,7 @@ function Header(){
     const iconStyle = {
         fontSize: "2.3rem", 
         color:"#00BCD4" };
-    const [className, setClassName] = useState("");
+    const [className, setClassName] = useState("header");
     const headerRef = useRef();
     const onScrollDown = e => {
         const navOffset = headerRef.current.offsetTop;

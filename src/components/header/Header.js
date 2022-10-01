@@ -3,17 +3,19 @@ import NavBar from "./navBar/NavBar";
 import CartWidget from "./navBar/CartWidget";
 import PersonIcon from '@mui/icons-material/Person';
 import IconButton from '@mui/material/IconButton';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import '../../stylesheets/Header.css';
 
 function Header(){
     const {navOptions, headerImg} = require('../../configuration');
     const iconStyle = {
-        fontSize: '2.3rem', 
+        fontSize: "2.3rem", 
         color:"#00BCD4" };
-    const [style, setStyle] = useState("");
+    const [className, setClassName] = useState("");
+    const headerRef = useRef();
     const onScrollDown = e => {
-        console.log(e);
+        const navOffset = headerRef.current.offsetTop;
+        return window.pageYOffset > navOffset ? setClassName("header background") : setClassName("header");
     };
 
     useEffect(() => {
@@ -21,7 +23,7 @@ function Header(){
     },[])
 
     return(
-        <header className="header" id="header">
+        <header className={className} id="header" ref={headerRef}>
             <img src={require(`../../images/${headerImg}`)} alt="Company Logo" />
             <NavBar navOptions={navOptions}>
                 <IconButton 

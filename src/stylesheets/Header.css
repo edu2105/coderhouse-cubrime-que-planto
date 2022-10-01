@@ -6,8 +6,13 @@
     width: 100%;
     height: 8vh;
     z-index: 1;
-    background: var(--header-color-background); }
+    background: transparent;
+    transition: .5s; }
     .header img{
         position: relative;
-        height: 100%;
-        margin-left: 2rem; }
+        margin: .2rem 2rem }
+
+.header.background{
+    transition: .5s;
+    background: var(--header-color-background);
+}

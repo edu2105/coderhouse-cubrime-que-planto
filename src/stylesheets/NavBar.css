@@ -44,3 +44,11 @@
         border: 2px solid var(--header-nav-color-login);
         background-color: var(--header-nav-color-login);
     }
+
+
+    @media (max-width: 970px) {
+        .nav-bar{
+            justify-content: space-evenly; }
+            .nav-bar ul li{
+                margin: 0 1rem; }
+        }

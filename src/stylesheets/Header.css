@@ -14,5 +14,4 @@
 
 .header.background{
     transition: .5s;
-    background: var(--header-color-background);
-}
+    background: var(--header-color-background); }

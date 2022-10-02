@@ -9,7 +9,8 @@
         justify-content: center;
         align-items: center; }
     .nav-bar ul li{
-        margin: 0 3rem; }
+        margin: 0 1rem;
+        padding: .5rem 1rem; }
     .nav-bar ul li a{
         text-decoration: none;
         font-size: 1.3rem;
@@ -32,6 +33,10 @@
         width: 100%;
           transform: scaleX(1);
           background: var(--header-color-nav-items-hover-underline); }
+    .nav-bar ul .active{
+        border-radius: 50%;
+        border: 1px solid white;
+        background-color: var(--header-color-nav-items-hover-underline); }
     .nav-bar ul .option-login{
         display: flex;
         align-items: center;

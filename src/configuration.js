@@ -1,5 +1,10 @@
 let navOptions = [
     {
+        title: "Inicio",
+        id: 0,
+        isDropDown: false
+    },
+    {
         title: "Mas Vendidos",
         id: 1,
         isDropDown: false

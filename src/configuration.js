@@ -1,33 +1,147 @@
-let navOptions = [
+const navOptions = [
     {
         title: "Inicio",
         id: 0,
-        isDropDown: false
+        isDropDown: false,
+        route: "/",
     },
     {
-        title: "Mas Vendidos",
+        title: "De Interior",
         id: 1,
-        isDropDown: false
+        isDropDown: false,
+        route: "/categoria/interior"
     },
     {
-        title: "Productos",
+        title: "De Exterior",
         id: 2,
-        isDropDown: false
+        isDropDown: false,
+        route: "/categoria/exterior"
     },
     {
-        title: "Cursos",
+        title: "Bonsáis",
         id: 3,
-        isDropDown: false
+        isDropDown: false,
+        route: "/categoria/bonsais"
     },
     {
-        title: "Nosotros",
+        title: "Ofertas",
         id: 4,
-        isDropDown: false
+        isDropDown: false,
+        route: "/categoria/ofertas"
     }
 ];
 
-let headerImg = "logo.png";
-
-let greeting = "🌱Bienvenido!! Mirá, elegí y suma más vida a tu vida🪴";
-
-module.exports = {navOptions, headerImg, greeting};
+const initialProducts = [{
+    id: 1,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}, {
+    id: 2,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}, {
+    id: 3,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}, {
+    id: 4,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}, {
+    id: 5,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}, {
+    id: 6,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}, {
+    id: 7,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}, {
+    id: 8,
+    title: "",
+    description: "",
+    pictureUrl: "",
+    pricing: {
+            currency: "",
+            netAmount: 0,
+            disccountPercentage: 0
+    },
+    caring: {
+            watering: "",
+            type: ""
+    }
+}];
+module.exports = {navOptions, initialProducts};

@@ -4,10 +4,12 @@ import CartWidget from "./navBar/CartWidget";
 import PersonIcon from '@mui/icons-material/Person';
 import IconButton from '@mui/material/IconButton';
 import { useState, useEffect, useRef } from "react";
+import Logo from '../../images/logo.png';
 import '../../stylesheets/Header.css';
+import { Link } from "react-router-dom";
 
-function Header(){
-    const {navOptions, headerImg} = require('../../configuration');
+const Header = () => {
+    const {navOptions} = require('../../configuration');
     const iconStyle = {
         fontSize: "2.3rem", 
         color:"#00BCD4" };
@@ -20,11 +22,17 @@ function Header(){
 
     useEffect(() => {
         window.addEventListener('scroll', onScrollDown);
-    },[])
+
+        return () => {
+            window.removeEventListener('scroll', onScrollDown);
+        }
+    },[]);
 
     return(
         <header className={className} id="header" ref={headerRef}>
-            <img src={require(`../../images/${headerImg}`)} alt="Company Logo" />
+            <Link to="/">
+                <img src={Logo} alt="Company Logo" />
+            </Link>
             <NavBar navOptions={navOptions}>
                 <IconButton 
                     color="primary" 
@@ -32,7 +40,8 @@ function Header(){
                     <PersonIcon 
                         style={iconStyle}/>
                 </IconButton>
-                <CartWidget />
+                <CartWidget 
+                    numberOfItems={10}/>
             </NavBar>
         </header>
     );

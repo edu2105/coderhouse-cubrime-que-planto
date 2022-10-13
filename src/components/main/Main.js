@@ -1,14 +1,23 @@
 import React from "react";
 import '../../stylesheets/Main.css';
+import ItemDetailContainer from "./ItemDetailContainer";
 import ItemListContainer from "./ItemListContainer";
+import { Routes, Route } from "react-router-dom";
+import Cart from "./Cart";
+import Home from "./Home";
 
-function Main(){
-    const {greeting} = require('../../configuration');
+const Main = () => {
+    const greeting = "🌱Mirá, elegí y suma más vida a tu vida🪴";
     
     return(
-        <div className="main">
-            <ItemListContainer greeting={greeting}/>
-        </div>
+        <main className="main">
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/categoria/:categoryId" element={<ItemListContainer greeting={greeting} />} />
+                <Route path="/producto/:productId" element={<ItemDetailContainer />}/>
+                <Route path="/canasta" element={<Cart />}/>
+            </Routes>
+        </main>
     );
 };
 

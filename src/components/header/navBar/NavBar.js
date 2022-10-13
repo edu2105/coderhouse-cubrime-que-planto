@@ -1,15 +1,10 @@
 import React from "react";
 import '../../../stylesheets/NavBar.css';
-import { useState } from 'react';
+import { NavLink } from "react-router-dom";
 
-function NavBar({navOptions, children}){
-    const [liClicked, setLiClicked] = useState(0);
-    const sectionHandler = (e, id) => {
-        setLiClicked(id);
-    };
-
-    let optionList = navOptions.map(({id, title}) =>
-      <li key={id} onClick={(e) => sectionHandler(e, id)} className={id === liClicked ? "active" : undefined}><a href="#0">{title}</a></li>);
+const NavBar = ({navOptions, children}) => {
+    let optionList = navOptions.map(({id, title, route}) =>
+    <NavLink to={route} key={id} end={route === "/" ? "end" : undefined}>{title}</NavLink>);
 
     return(
         <nav className="nav-bar">

@@ -1,6 +1,9 @@
-h1{
-    color: white;
-    font-family: 'Courgette', sans-serif; 
-    font-weight: lighter;
-    text-align: center;
-}
+.item-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .item-list-container h1{
+        color: white;
+        font-family: 'Courgette', sans-serif; 
+        font-weight: lighter;
+        text-align: center; }

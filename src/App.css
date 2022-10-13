@@ -10,12 +10,15 @@
   --header-color-nav-items-hover-underline: #00BCD4; 
   --header-color-background: #005005;
   --main-color-background: #4c8c4a;
+  --main-color-cart: #d204f5;
+  --main-color-cart-hover: #b907d8;
+  --main-color-cart-active: #9203ac;
 }
 
 .app{
   height: 100%;
   overflow-x: hidden;
-}
+  font-family: 'Courgette', sans-serif; }
 
 @media (max-width: 1078px) {
     html {

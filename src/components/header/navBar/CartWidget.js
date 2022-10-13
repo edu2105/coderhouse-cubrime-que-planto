@@ -3,28 +3,39 @@ import '../../../stylesheets/CartWidget.css';
 import Button from '@mui/material/Button';
 import ShoppingCartRounded from '@mui/icons-material/ShoppingCartRounded';
 import Badge from '@mui/material/Badge';
+import { Link } from "react-router-dom";
 
-function CartWidget({numberOfItems}){
+const CartWidget = ({numberOfItems}) => {
     const buttonStyle = {
         fontFamily: 'Courgette', 
         fontSize: "1.1rem", 
         backgroundColor: "#00BCD4" };
+    const badgeColors = {
+        "& .MuiBadge-badge": {
+          color: "white",
+          backgroundColor: "#d204f5"
+        }
+      };
 
     return(
         <div className="cart-widget">
             <Badge 
-                badgeContent={10} 
-                color="secondary"
+                sx={badgeColors}
+                badgeContent={numberOfItems}
                 anchorOrigin={{
                     vertical: 'top',
                     horizontal: 'left',
                   }}>
-                <Button 
-                    variant="contained" 
-                    startIcon={<ShoppingCartRounded />}
-                    style={buttonStyle}>
-                    Canasta
-                </Button>
+                <Link 
+                    to="/canasta"
+                    style={{textDecoration: "none"}}>
+                    <Button 
+                        variant="contained" 
+                        startIcon={<ShoppingCartRounded />}
+                        style={buttonStyle}>
+                        Canasta
+                    </Button>
+                </Link>
             </Badge>
         </div>
     );

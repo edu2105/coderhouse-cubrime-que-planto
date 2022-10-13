@@ -1,11 +1,11 @@
 import React from "react";
 import '../../stylesheets/Footer.css'
 
-function Footer(props){
+const Footer = (props) => {
     return(
-        <div className="footer">
-
-        </div>
+        <footer className="footer">
+            <h1>En construcción, vuelva pronto.</h1>
+        </footer>
     );
 };
 

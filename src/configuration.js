@@ -21,13 +21,7 @@ const navOptions = [
         title: "Bonsáis",
         id: 3,
         isDropDown: false,
-        route: "/categoria/bonsais"
-    },
-    {
-        title: "Ofertas",
-        id: 4,
-        isDropDown: false,
-        route: "/categoria/ofertas"
+        route: "/categoria/bonsai"
     }
 ];
 

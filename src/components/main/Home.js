@@ -6,7 +6,27 @@ const Home = () => {
     return(
         <div className="home-container">
             <section>
-                <h1>Conectá con la vida</h1>
+                <div className="home-title">
+                    <span>C</span>
+                    <span>o</span>
+                    <span>n</span>
+                    <span>e</span>
+                    <span>c</span>
+                    <span>t</span>
+                    <span>á</span>
+                    <span> </span>
+                    <span>c</span>
+                    <span>o</span>
+                    <span>n</span>
+                    <span> </span>
+                    <span>l</span>
+                    <span>a</span>
+                    <span> </span>
+                    <span>v</span>
+                    <span>i</span>
+                    <span>d</span>
+                    <span>a</span>
+                </div>
                 <article>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo harum non repellendus id ut possimus consectetur commodi, animi aspernatur est perspiciatis, tenetur molestias dignissimos aperiam? Quas provident deserunt animi quidem qui sed dolores esse, nesciunt deleniti quia exercitationem ad veritatis, numquam ratione nemo eum sunt adipisci assumenda dignissimos nulla. In
                 </article>
@@ -15,8 +35,8 @@ const Home = () => {
                 <h2>Conocé nuestras plantas</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, modi.</p>
                 <div className="home-buttons-container">
-                    <button className="button-int"><Link to="/categoria/interior">Interior</Link></button>
-                    <button className="button-ext"><Link to="/categoria/exterior">Exterior</Link></button>
+                    <Link to="/categoria/interior"><button className="button-int">Interior</button></Link>
+                    <Link to="/categoria/exterior"><button className="button-ext">Exterior</button></Link>
                 </div>
             </section>
         </div>

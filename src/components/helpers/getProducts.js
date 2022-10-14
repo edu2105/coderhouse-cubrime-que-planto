@@ -1,8 +1,13 @@
 const getProducts = async (product="") => {
     const url = `https://enifi.stage.duettosystems.com/tools/products/${product}`;
     const response = await fetch(url);
-    const products = await response.json();
+
+    if(!response.ok){
+        const { url, status, statusText } = response;
+        throw Error(`Error: ${status} ${statusText} when fetching ${url}`);
+    }
     
+    const products = await response.json();
     return products;
 };
 

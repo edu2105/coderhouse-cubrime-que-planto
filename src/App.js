@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Header />
+        <Header/>
         <Main />
         <Footer />
       </BrowserRouter>

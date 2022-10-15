@@ -7,21 +7,26 @@
         letter-spacing: 5px;
         cursor: default; }
         .page-container span:nth-child(1){
-            color: green; }
+            color: green;
+            animation: bumping .5s ease 1; }
         .page-container span:nth-child(2){
-            color: rgb(72, 155, 72); }
+            color: rgb(72, 155, 72);
+            animation: bumping .5s ease .5s 1; }
         .page-container span:nth-child(3){
-            color: green; }
+            color: green;
+            animation: bumping .5s ease 1s 1; }
         .page-container span:hover{
             position: relative; 
             top: -10px; }
     .page-container .page-message-container{
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin-top: 3rem; }
+        align-items: center; }
         .page-container .page-message-container img{
-            animation: siding 3s ease infinite; }
+            position: relative;
+            animation: rotating 1.5s linear 1;
+            cursor: pointer;
+            padding: 5rem; }
         .page-container .page-message-container .page-message{
             min-height: 50%;
             max-width: 30%;
@@ -31,12 +36,24 @@
             box-shadow: 10px 10px 15px rgba(0, 0, 0, 1); }
         .page-container .page-message-container article{
             color: white;
-            font-size: 2rem; }
+            font-size: 1.5rem;
+            text-align: center; }
         .page-container .page-message-container article:last-child{
             margin-left: 1rem; }
 
-@keyframes siding{
-    0% {transform: rotate(-45deg); }
-    50% {transform: rotate(45deg); }
-    100% {transform: rotate(-45deg); }
+@keyframes rotating{
+    0% {transform: rotate(0deg); }
+    25% {transform: rotate(-45deg); }
+    50% {transform: rotate(0deg); }
+    75% {transform: rotate(45deg); }
+    100% {transform: rotate(0deg); }
+}
+
+@keyframes bumping{
+    0% { position: relative; 
+         top: 0; }
+    50% { position: relative; 
+        top: -10px; }
+    100% { position: relative; 
+        top: 0; }
 }

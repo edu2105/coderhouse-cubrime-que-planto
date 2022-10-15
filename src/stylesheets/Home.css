@@ -15,7 +15,7 @@
             color: whitesmoke;
             font-size: 5rem;
             margin-left: 4px;
-            cursor: default; }
+            cursor: pointer; }
         .home-container .home-title span:hover{
             position: relative;
             color: var(--header-color-background);

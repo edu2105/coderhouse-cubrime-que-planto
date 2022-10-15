@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../../stylesheets/ItemCount.css';
 
-const ItemCount = ({initialValue, stock, onAdd}) => {
+const ItemCount = ({initialValue, stock, onAdd, style}) => {
     const [count, setCount] = useState(initialValue);
     const [cartDisabled, setCartDisabled] = useState(true);
     let aux = initialValue;
@@ -25,7 +25,7 @@ const ItemCount = ({initialValue, stock, onAdd}) => {
                 <input type="number" name="items" id="items-count" value={count} readOnly/>
                 <button className="item-btn right" onClick={() => countHandler(1)}>+</button>
             </div>
-            <button className="cart-btn" onClick={stock > 0 && onAdd} disabled={cartDisabled}>Agregar a canasta</button>
+            <button className="cart-btn" onClick={stock > 0 ? onAdd : undefined} disabled={cartDisabled} style={style}>Agregar a canasta</button>
         </div>
     );
 };

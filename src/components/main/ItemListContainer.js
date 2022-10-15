@@ -4,8 +4,9 @@ import ItemList from "./ItemList";
 import getProducts from "../helpers/getProducts";
 import { Navigate, useParams } from "react-router-dom";
 
+const {initialProducts} = require('../../configuration');
+
 const ItemListContainer = ({greeting}) => {
-    const {initialProducts} = require('../../configuration');
     const [products, setProducts] = useState(initialProducts);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);

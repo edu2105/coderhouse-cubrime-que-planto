@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import '../../stylesheets/ItemListContainer.css'
 import ItemList from "./ItemList";
-import getProducts from "../helpers/getProducts";
+import getProducts from "../../helpers/getProducts";
 import { Navigate, useParams } from "react-router-dom";
 
-const {initialProducts} = require('../../configuration');
+const {initialProducts} = require('../../helpers/configuration');
 
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState(initialProducts);

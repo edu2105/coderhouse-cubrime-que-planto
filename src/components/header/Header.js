@@ -9,7 +9,7 @@ import '../../stylesheets/Header.css';
 import { Link } from "react-router-dom";
 
 const Header = () => {
-    const {navOptions} = require('../../configuration');
+    const {navOptions} = require('../../helpers/configuration');
     const iconStyle = {
         fontSize: "2.3rem", 
         color:"#00BCD4" };

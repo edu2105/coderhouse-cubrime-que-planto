@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import ItemDetail from "./ItemDetail";
-import getProducts from "../helpers/getProducts";
+import getProducts from "../../helpers/getProducts";
 import { useParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
-const {initialProducts} = require('../../configuration');
+const {initialProducts} = require('../../helpers/configuration');
 const initialProduct = initialProducts[0];
 
 const ItemDetailContainer = () => {

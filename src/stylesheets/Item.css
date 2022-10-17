@@ -1,8 +1,7 @@
 .item{
     position: relative;
     width: 18.75rem;
-    height: 17rem;
-    margin: 2rem 3rem; }
+    height: 17rem; }
     .item .item-img-container{
         position: absolute;
         top: 0;
@@ -69,7 +68,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: rgb(29, 35, 46);
+                background-color: var(--header-color-nav-buttons);
                 border-radius: 1.2rem;
                 box-shadow: 10px 10px 10px black; }
                 .item-description:hover{
@@ -77,7 +76,7 @@
                     transform: scale(1.05);
                     transition: .5s; }
                 .item-description h3{
-                    color: white;
+                    color: rgb(200, 205, 209);
                     letter-spacing: .2rem; }
 
 @keyframes gradient{

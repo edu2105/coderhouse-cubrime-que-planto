@@ -4,3 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%; }
+    .item-list li{
+        margin: 2rem 3rem;
+        list-style: none;
+    }

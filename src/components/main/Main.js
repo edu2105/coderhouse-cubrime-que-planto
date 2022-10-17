@@ -7,7 +7,7 @@ import Cart from "./Cart";
 import Home from "./Home";
 import PageNotFound from "./PageNotFound";
 
-const Main = ({cartBadge}) => {
+const Main = () => {
     const greeting = "🌱Mirá, elegí y suma más vida a tu vida🪴";
     
     return(

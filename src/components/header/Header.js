@@ -17,7 +17,7 @@ const Header = () => {
     const headerRef = useRef();
     const onScrollDown = e => {
         const navOffset = headerRef.current.offsetTop;
-        return window.pageYOffset > navOffset ? setClassName("header background") : setClassName("header");
+        return window.pageYOffset > navOffset ? setClassName("header scroll") : setClassName("header");
     };
 
     useEffect(() => {

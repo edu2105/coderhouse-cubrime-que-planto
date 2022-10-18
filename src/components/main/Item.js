@@ -6,7 +6,7 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import { Skeleton } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Item = ({id, title, pictureUrl, pricing, caring, loading}) => {
+const Item = ({id, title, pictureUrl, stock, pricing, caring, loading}) => {
     const waterIconsTotal = [1,2,3];
     const typeValues = {
         exterior: "ext",
@@ -19,7 +19,12 @@ const Item = ({id, title, pictureUrl, pricing, caring, loading}) => {
             <div className="item">
                 <div className="item-img-container">
                     { 
-                        loading ? (<Skeleton variant="circular" sx={{ bgcolor: 'grey.400' }} width={200} height={200} animation="wave" />) : (<img src={pictureUrl} alt={title} />)
+                        loading ? (<Skeleton variant="circular" sx={{ bgcolor: 'grey.400' }} width={200} height={200} animation="wave" />) : (
+                        <>
+                            {stock < 4 && <mark>{stock === 1 ? "Último disponible" : `Últimos ${stock} disponibles`}</mark>}
+                            <img src={pictureUrl} alt={title} />
+                        </>
+                        )
                     }
                     <div className="item-details">
                         <div className="item-watering-details">

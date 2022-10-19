@@ -46,6 +46,27 @@
                         font-size: 1.5rem; }
                     .attributes .strong{
                         color: var(--header-color-nav-buttons); }
+                .detail-attributes .end-btn-container{
+                    width: 100%; }
+                    .detail-attributes .end-btn-container .end-btn{
+                        width: 100%;
+                        height: 3rem;
+                        position: absolute;
+                        opacity: 0;
+                        bottom: 0;
+                        color: white;
+                        background-color: var(--main-color-cart);
+                        border: unset;
+                        cursor: pointer;
+                        font-size: 1.1rem;
+                        letter-spacing: 2px;
+                        visibility: hidden;
+                        font-family: 'Courgette', sans-serif; }
+                    .detail-attributes .end-btn-container .end-btn.visible{
+                        transition: 1.5s linear;
+                        visibility: visible;
+                        opacity: 1; }
+                    
         .detail-description{
             padding: 1rem 0 2rem 1rem;
             align-self: flex-start;

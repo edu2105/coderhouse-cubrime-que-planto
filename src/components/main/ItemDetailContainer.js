@@ -18,9 +18,6 @@ const ItemDetailContainer = () => {
                 console.log(error);
                 setError(true);
             })};
-    const onAdd = () => {
-        console.log("Item added to bucket");
-    };
 
     useEffect(() => {
         updateProducts();
@@ -29,8 +26,7 @@ const ItemDetailContainer = () => {
     return(
         <>
             { error && <Navigate to="/oops" replace={true}/> }
-            <ItemDetail {...product}
-                        onAdd={onAdd} />
+            <ItemDetail {...product} />
         </>
     );
 };

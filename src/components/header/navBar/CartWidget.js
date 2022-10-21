@@ -9,7 +9,7 @@ const CartWidget = ({numberOfItems}) => {
     const buttonStyle = {
         fontFamily: 'Courgette', 
         fontSize: "1.1rem", 
-        backgroundColor: "#00BCD4" };
+        backgroundColor: "#0092a5" };
     const badgeColors = {
         "& .MuiBadge-badge": {
           color: "white",

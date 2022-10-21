@@ -12,7 +12,7 @@
     .header img{
         position: relative;
         height: 90%;
-        width: auto;
+        width: max-content;
         margin: .2rem 2rem }
 
 .header.scroll{

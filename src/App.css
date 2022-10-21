@@ -4,12 +4,12 @@
 }
 
 :root{
-  --header-color-nav-buttons: #00BCD4;
+  --header-color-nav-buttons: #0092a5;
   --header-color-nav-items: white;
   --header-color-nav-items-hover: #048091;
-  --header-color-nav-items-hover-underline: #00BCD4; 
-  --header-color-background: #005005;
-  --main-color-background: #4c8c4a;
+  --header-color-nav-items-hover-underline: #0092a5; 
+  --header-color-background: #42bb13;
+  --main-color-background: #42bb13;
   --main-color-cart: #d204f5;
   --main-color-cart-hover: #b907d8;
   --main-color-cart-active: #9203ac;

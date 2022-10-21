@@ -65,14 +65,13 @@
                     .detail-attributes .end-btn-container .end-btn.visible{
                         transition: 1.5s linear;
                         visibility: visible;
-                        opacity: 1; }
-                    
+                        opacity: 1; }    
         .detail-description{
             padding: 1rem 0 2rem 1rem;
             align-self: flex-start;
             background: rgb(255,255,255);
-            background: linear-gradient(180deg, rgba(59,142,52,1) 7%, rgba(14,85,8,1) 18%);
+            background: linear-gradient(180deg, #56f119 7%, #42bb13 18%);
             border-radius: 0 0 .8rem .8rem; }
             .detail-description p{
                 font-size: 1.3rem;
-                color: rgb(201, 199, 209); }
+                color: black; }

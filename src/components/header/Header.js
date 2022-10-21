@@ -12,7 +12,7 @@ const Header = () => {
     const {navOptions} = require('../../helpers/configuration');
     const iconStyle = {
         fontSize: "2.3rem", 
-        color:"#00BCD4" };
+        color:"#0092a5" };
     const [className, setClassName] = useState("header");
     const headerRef = useRef();
     const onScrollDown = e => {
@@ -35,7 +35,7 @@ const Header = () => {
             </Link>
             <NavBar navOptions={navOptions}>
                 <IconButton 
-                    color="primary" 
+                    style={iconStyle}
                     aria-label="user login">
                     <PersonIcon 
                         style={iconStyle}/>

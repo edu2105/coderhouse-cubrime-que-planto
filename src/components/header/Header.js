@@ -4,7 +4,7 @@ import CartWidget from "./navBar/CartWidget";
 import PersonIcon from '@mui/icons-material/Person';
 import IconButton from '@mui/material/IconButton';
 import { useState, useEffect, useRef } from "react";
-import Logo from '../../images/logo.png';
+import Logo from '../../images/logo2.png';
 import '../../stylesheets/Header.css';
 import { Link } from "react-router-dom";
 

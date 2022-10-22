@@ -1,7 +1,10 @@
 .cart-details-container{
+    min-height: 90vh;
+    padding: 10vh 0 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; }
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(255, 255, 255, .1)), url("../images/vida5.jpg");
+    background-size: cover; }
     .cart-details-container h1{
         color: white; }

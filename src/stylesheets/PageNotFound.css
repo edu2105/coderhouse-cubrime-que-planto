@@ -1,4 +1,8 @@
 .page-container{
+    min-height: 90vh;
+    padding: 10vh 0 1rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(255, 255, 255, .1)), url("../images/vida5.jpg");
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center; }
@@ -7,13 +11,13 @@
         letter-spacing: 5px;
         cursor: default; }
         .page-container span:nth-child(1){
-            color: green;
+            color: var(--header-color-background);
             animation: bumping .5s ease 1; }
         .page-container span:nth-child(2){
             color: rgb(72, 155, 72);
             animation: bumping .5s ease .5s 1; }
         .page-container span:nth-child(3){
-            color: green;
+            color: var(--header-color-background);
             animation: bumping .5s ease 1s 1; }
         .page-container span:hover{
             position: relative; 
@@ -31,7 +35,7 @@
             min-height: 50%;
             max-width: 30%;
             padding: 2rem;
-            background: green;
+            background: var(--header-color-background);
             border-radius: 50%;
             box-shadow: 10px 10px 15px rgba(0, 0, 0, 1); }
         .page-container .page-message-container article{

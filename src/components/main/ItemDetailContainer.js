@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         updateProducts();
-    }, []);
+    }, [productId]);
 
     return(
         <>

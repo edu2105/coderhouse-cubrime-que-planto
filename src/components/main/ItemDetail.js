@@ -1,33 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import '../../stylesheets/ItemDetail.css';
 import { Link } from "react-router-dom";
+import { Context } from '../../context/CartContext';
 
-const ItemDetail = ({id, title, description, pictureUrl, category, stock, pricing, caring}) => {
-    const priceWithDiscount = pricing.netAmount - ((pricing.netAmount * pricing.discountPercentage) / 100);
+const ItemDetail = (product) => {
+    const priceWithDiscount = product.pricing.netAmount - ((product.pricing.netAmount * product.pricing.discountPercentage) / 100);
     const wateringLevel = ["Bajo", "Medio", "Alto"];
-    const isPricingDiscount = pricing.discountPercentage > 0;
+    const isPricingDiscount = product.pricing.discountPercentage > 0;
     const [isAddToCartClicked, setIsAddToCartClicked] = useState(false);
-    const onAdd = () => {
-        console.log("Item added to bucket");
+    const { addItem } = useContext(Context);
+    const onAdd = (count) => {
         setIsAddToCartClicked(true);
+        addItem({...product, finalPricePerUnit: priceWithDiscount, finalPrice: priceWithDiscount * count, quantity: count}, count);
     };
     
     return(
         <section className="item-detail-section">
             <div className="item-detail-container">  
                 <div className="detail-container">
-                    <img src={pictureUrl} alt={title} />
+                    <img src={product.pictureUrl} alt={product.title} />
                     <div className="detail-attributes">
                         <div className="attributes">
-                            <h2>{title}</h2>
-                            <span>{category}</span>
-                            <span>Riego {wateringLevel[caring.watering - 1]}</span>
-                            <span>Quedan {stock} disponibles</span>
-                            <span className={!isPricingDiscount ? "price" : undefined}>Precio: <strong className={!isPricingDiscount ? "strong" : undefined}>$ {pricing.netAmount}</strong> c/u</span>
+                            <h2>{product.title}</h2>
+                            <span>{product.category}</span>
+                            <span>Riego {wateringLevel[product.caring.watering - 1]}</span>
+                            <span>Quedan {product.stock} disponibles</span>
+                            <span className={!isPricingDiscount ? "price" : undefined}>Precio: <strong className={!isPricingDiscount ? "strong" : undefined}>$ {product.pricing.netAmount}</strong> c/u</span>
                             {isPricingDiscount && (
                             <>
-                                <span>Descuento: {pricing.discountPercentage}%</span>
+                                <span>Descuento: {product.pricing.discountPercentage}%</span>
                                 <span className="price">Final: <strong className="strong">$ {priceWithDiscount}</strong> c/u</span>
                             </>
                             )}
@@ -37,13 +39,13 @@ const ItemDetail = ({id, title, description, pictureUrl, category, stock, pricin
                             <ItemCount 
                                 extraStyles={isAddToCartClicked ? {display: "none"} : {display: "block"}}
                                 initialValue={0}
-                                stock={stock}
+                                stock={product.stock}
                                 onAdd={onAdd} />
                         </div>
                     </div>
                 </div>
                 <div className="detail-description">
-                    <p>{description}</p>
+                    <p>{product.description}</p>
                 </div>
             </div>
         </section>

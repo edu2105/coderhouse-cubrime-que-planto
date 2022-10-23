@@ -1,7 +1,7 @@
 .page-container{
     min-height: 90vh;
     padding: 10vh 0 1rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(255, 255, 255, .1)), url("../images/vida5.jpg");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(255, 255, 255, .1)), url("../images/ground.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;

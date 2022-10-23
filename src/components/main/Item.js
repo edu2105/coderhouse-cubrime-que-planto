@@ -29,7 +29,7 @@ const Item = ({id, title, pictureUrl, stock, pricing, caring, loading}) => {
                     <div className="item-details">
                         <div className="item-watering-details">
                         {
-                            loading ? (<Skeleton variant="text" sx={{ bgcolor: 'grey.400', fontSize: "1rem" }} animation="wave" />) : (<span className="item-title">Agua</span>)
+                            loading ? (<Skeleton variant="text" sx={{ bgcolor: 'grey.400', fontSize: "1rem" }} animation="wave" />) : (<span className="item-title">Riego</span>)
                         }
                         {
                             loading ? (

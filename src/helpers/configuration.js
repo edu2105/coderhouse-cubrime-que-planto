@@ -33,7 +33,7 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
@@ -47,7 +47,7 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
@@ -61,7 +61,7 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
@@ -75,7 +75,7 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
@@ -89,7 +89,7 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
@@ -103,7 +103,7 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
@@ -117,7 +117,7 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
@@ -131,11 +131,12 @@ const initialProducts = [{
     pricing: {
             currency: "",
             netAmount: 0,
-            disccountPercentage: 0
+            discountPercentage: 0
     },
     caring: {
             watering: "",
             type: ""
     }
 }];
+
 module.exports = {navOptions, initialProducts};

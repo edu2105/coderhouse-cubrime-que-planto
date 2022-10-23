@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import '../../../stylesheets/CartWidget.css';
 import Button from '@mui/material/Button';
 import ShoppingCartRounded from '@mui/icons-material/ShoppingCartRounded';
 import Badge from '@mui/material/Badge';
 import { Link } from "react-router-dom";
+import { Context } from '../../../context/CartContext';
 
-const CartWidget = ({numberOfItems}) => {
+const CartWidget = () => {
     const buttonStyle = {
         fontFamily: 'Courgette', 
         fontSize: "1.1rem", 
@@ -16,12 +17,13 @@ const CartWidget = ({numberOfItems}) => {
           backgroundColor: "#d204f5"
         }
       };
+    const { totalQty } = useContext(Context);
 
     return(
         <div className="cart-widget">
             <Badge 
                 sx={badgeColors}
-                badgeContent={numberOfItems}
+                badgeContent={totalQty}
                 anchorOrigin={{
                     vertical: 'top',
                     horizontal: 'left',

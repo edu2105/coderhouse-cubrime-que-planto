@@ -1,10 +1,62 @@
-.cart-details-container{
+.cart-container{
     min-height: 90vh;
+    width: 100%;
     padding: 10vh 0 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(255, 255, 255, .1)), url("../images/vida5.jpg");
     background-size: cover; }
-    .cart-details-container h1{
-        color: white; }
+    .cart-container .cart-details-section{
+        width: 60%;
+        left: 20%;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 10px 10px 8px black;
+        padding: 1rem; }
+        .cart-details-section .cart-details{
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            width: 100%; }
+            .cart-details .cart-item-detail{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: .5rem 0;
+                margin: 1rem 0;
+                border-radius: 1.2rem;
+                background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.2));
+                box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
+                -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
+                .cart-item-detail img{
+                    width: 10rem;
+                    height: 10rem;
+                    margin-left: 2rem; }
+                .cart-item-detail .price-details{
+                    width: 50%;
+                    text-align: center; }
+                .cart-item-detail .price-final{
+                    width: 20%;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 1.5rem; }
+                    .price-final h3{
+                        margin-right: .5rem; }
+        .cart-details-section .cart-total{
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0 }
+            .cart-total span{
+                font-size: 1.5rem;
+                color: var(--main-color-background);
+                font-weight: 500; }
+            .cart-total span:nth-child(2){
+                width: 50%;
+                text-align: center;
+                letter-spacing: 2px; }
+            .cart-total span:nth-child(3){
+                margin-right: 2rem;
+                width: 20%;
+                text-align: end; }

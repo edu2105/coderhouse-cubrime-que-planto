@@ -40,8 +40,7 @@ const Header = () => {
                     <PersonIcon 
                         style={iconStyle}/>
                 </IconButton>
-                <CartWidget 
-                    numberOfItems={10}/>
+                <CartWidget />
             </NavBar>
         </header>
     );

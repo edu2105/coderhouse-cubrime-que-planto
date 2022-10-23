@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import '../../stylesheets/PageNotFound.css'
 import plant from '../../images/plant404.png';
 
@@ -16,6 +16,12 @@ const PageNotFound = () => {
             x: e.clientX,
             y: e.clientY
         });
+    };
+    const imgStyle = {
+        transform: `rotate(${imgRotation}deg)`
+    };
+
+    useEffect( () => {
         let boxBoundingRect = imgRef.current.getBoundingClientRect();
         let boxCenter = {
             x: boxBoundingRect.left + boxBoundingRect.width/2, 
@@ -23,11 +29,7 @@ const PageNotFound = () => {
         };
         let angle = Math.atan2(imgPosition.x - boxCenter.x, - (imgPosition.y - boxCenter.y) )*(180 / Math.PI);
         setImgRotation(angle);
-    };
-    
-    const imgStyle = {
-        transform: `rotate(${imgRotation}deg)`
-    };
+    }, [imgPosition])
 
     return(
         <div className="page-container">

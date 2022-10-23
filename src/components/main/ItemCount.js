@@ -25,7 +25,7 @@ const ItemCount = ({initialValue, stock, onAdd, extraStyles}) => {
                 <input type="number" name="items" id="items-count" value={count} readOnly/>
                 <button className="item-btn right" onClick={() => countHandler(1)}>+</button>
             </div>
-            <button className="cart-btn" onClick={stock > 0 ? onAdd : undefined} disabled={cartDisabled}>Agregar a canasta</button>
+            <button className="cart-btn" onClick={stock > 0 ? () => { onAdd(count) } : undefined} disabled={cartDisabled}>Agregar a canasta</button>
         </div>
     );
 };

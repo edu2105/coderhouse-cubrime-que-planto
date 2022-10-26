@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import '../../stylesheets/ItemListContainer.css'
 import ItemList from "./ItemList";
-import getProducts from "../../helpers/getProducts";
 import { Navigate, useParams } from "react-router-dom";
+import getDocsFromFirebase from "../../helpers/getDocsFromFirebase";
 
 const {initialProducts} = require('../../helpers/configuration');
 
@@ -10,16 +10,22 @@ const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState(initialProducts);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
-    const {categoryId} = useParams();
+    const { categoryId } = useParams();
     const updateProducts = () => {
-        getProducts(categoryId)
-            .then((products) => {
-                setProducts(products);
+        getDocsFromFirebase(categoryId, "category")
+            .then( (result) => {
+                const listProducts = result.docs.map( item => {
+                    return {
+                        ...item.data(),
+                        docId: item.id
+                    }
+                });
+                console.log(listProducts);
+                listProducts.length ? setProducts(listProducts) : setError(true);
                 setLoading(false);
             })
             .catch((error) => {
                 console.log(error);
-                setError(true);
             });
     };
 

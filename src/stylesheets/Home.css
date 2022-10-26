@@ -1,13 +1,13 @@
 .home-container{
     width: 100%;
-    min-height: 90vh;
-    padding: 10vh 0 1rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(255, 255, 255, .1)), url("../images/vida5.jpg");
     background-size: cover; }
     .home-container .home-section{
-        margin: 7rem 0 0 1rem;
+        margin: 0 0 0 1rem;
         width: 50%;
-        align-self: flex-start;
         padding: 2rem;
         background: rgba(0, 0, 0, .5);
         border-radius: 1rem;

@@ -7,7 +7,7 @@
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     border-radius: 1.2rem;
-    box-shadow: 10px 10px 10px black; }
+    box-shadow: 3px 3px 5px rgb(199, 198, 198);}
     .item .item-img-container{
         position: absolute;
         top: 0;
@@ -67,7 +67,7 @@
                         margin-left: .5rem; }
             .item-details .item-price-wo-discount{
                 margin: .5rem .5rem 0 0;
-                color: rgb(102, 102, 102);
+                color: rgb(182, 180, 180);
                 align-self: flex-end; }
             .item-details .item-price{
                 font-size: 1.7rem;
@@ -94,12 +94,12 @@
                 .item-description:active{
                     background: linear-gradient(135deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25));
                     box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
-                    -3px -3px 5px 0 rgba(255, 255, 255, 0.25);
+                    -2px -2px 3px 0 rgba(255, 255, 255, 0.25);
                     transition: .5s; }
                 .item-description h3{
-                    color: rgb(230, 230, 230);
+                    font-size: 1.3rem;
+                    color: var(--main-color-background);
                     letter-spacing: .2rem; }
-
 @keyframes gradient{
     0% {background-position: 0% 50%; }
     50% {background-position: 100% 50%; }

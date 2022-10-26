@@ -4,7 +4,7 @@ import CartWidget from "./navBar/CartWidget";
 import PersonIcon from '@mui/icons-material/Person';
 import IconButton from '@mui/material/IconButton';
 import { useState, useEffect, useRef } from "react";
-import Logo from '../../images/logo2.png';
+import logo from '../../images/cqp-logo.png';
 import '../../stylesheets/Header.css';
 import { Link } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const Header = () => {
     return(
         <header className={className} id="header" ref={headerRef}>
             <Link to="/">
-                <img src={Logo} alt="Company Logo" />
+                <img src={logo} alt="Company Logo" />
             </Link>
             <NavBar navOptions={navOptions}>
                 <IconButton 

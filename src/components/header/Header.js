@@ -1,18 +1,14 @@
 import React from "react";
 import NavBar from "./navBar/NavBar";
 import CartWidget from "./navBar/CartWidget";
-import PersonIcon from '@mui/icons-material/Person';
-import IconButton from '@mui/material/IconButton';
 import { useState, useEffect, useRef } from "react";
 import logo from '../../images/cqp-logo.png';
 import '../../stylesheets/Header.css';
 import { Link } from "react-router-dom";
+import SearchBar from "./navBar/SearchBar";
 
 const Header = () => {
     const {navOptions} = require('../../helpers/configuration');
-    const iconStyle = {
-        fontSize: "2.3rem", 
-        color:"#0092a5" };
     const [className, setClassName] = useState("header");
     const headerRef = useRef();
     const onScrollDown = e => {
@@ -31,15 +27,10 @@ const Header = () => {
     return(
         <header className={className} id="header" ref={headerRef}>
             <Link to="/">
-                <img src={logo} alt="Company Logo" />
+                <img className="logo" src={logo} alt="Company Logo" />
             </Link>
             <NavBar navOptions={navOptions}>
-                <IconButton 
-                    style={iconStyle}
-                    aria-label="user login">
-                    <PersonIcon 
-                        style={iconStyle}/>
-                </IconButton>
+                <SearchBar />
                 <CartWidget />
             </NavBar>
         </header>

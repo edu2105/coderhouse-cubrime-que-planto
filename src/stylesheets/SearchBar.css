@@ -1,0 +1,76 @@
+.searchbar-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease-out;
+    width: 12%; }
+.searchbar-container:focus-within{
+    width: 20%;
+    transition: 1s ease-out; }
+    .searchbar-container .search-input{
+        position: relative;
+        height: 2rem;
+        border-radius: .7rem;
+        border: 3px solid var(--header-color-nav-buttons);
+        width: 100%;
+        padding: .5rem;
+        z-index: 1;
+        background-color: transparent; }
+    .searchbar-container .search-input:focus{
+        background-color: white;
+        border: 3px solid var(--header-color-nav-buttons); }
+    .searchbar-container .search-input:focus ~.search-background{
+            visibility: hidden; }
+    .searchbar-container .search-background{
+        position: absolute;
+        width: 100%;
+        padding: .1rem 0;
+        background-color: white;
+        border-radius: .7rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        .search-background .search-placeholder{
+            position: relative;
+            left: 10%; }
+        .search-background .searchbar-icon{
+            position: relative;
+            left: 5%; }
+    .searchbar-container .search-results{
+        position: absolute;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        top: 70%;
+        width: 95%;
+        height: 0;
+        border-radius: .7rem;
+        border: 3px solid var(--header-color-nav-buttons);
+        border-top: 0;
+        background-color: white; }
+    .searchbar-container .search-results.visible{
+        visibility: visible;
+        height: auto;
+        transition: 1s ease-out;
+        z-index: 2; }
+        .search-results .search-item{
+            list-style: none;
+            width: 100%; }
+            .search-item .search-item-link{
+                text-decoration: none;
+                padding: .3rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start; }
+                .search-item-link .item-img{
+                    min-width: 3rem;
+                    max-width: 3rem;
+                    min-height: 3rem;
+                    max-height: 3rem;
+                    margin-left: .5rem; }
+                .search-item-link .item-title{
+                    width: 5rem;
+                    margin-right: 1rem;
+                    font-size: 1rem;
+                    color: black; }

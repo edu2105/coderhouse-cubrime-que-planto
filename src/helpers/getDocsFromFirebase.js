@@ -3,12 +3,14 @@ import { db } from '../firebase/firebase';
 
 const productsCollection = collection(db, 'products');
 
-const getDocsFromFirebase = async (reference="", type) => { 
-    const productsQuery = type==="category" ? 
-        query(productsCollection, where("category", "==", reference)) : 
-        doc(db, "products", reference.toString());
-        
-    const queryResult = type==="category" ? await getDocs(productsQuery) : await getDoc(productsQuery);
+const getDocsFromFirebase = async (fieldToQuery, fieldValue="") => { 
+    let fieldValueUpper = fieldValue.charAt(0).toUpperCase() + fieldValue.slice(1);
+    const productsQuery = 
+    fieldToQuery==="id" ? doc(db, "products", fieldValue) :
+    fieldToQuery==="title" ? query(productsCollection, where(fieldToQuery, ">=", fieldValueUpper), where(fieldToQuery, "<=", fieldValueUpper+ 'z')) :
+    query(productsCollection, where(fieldToQuery, "==", fieldValue));
+    
+    const queryResult = fieldToQuery==="id" ? await getDoc(productsQuery) : await getDocs(productsQuery);
 
     return queryResult;
 };

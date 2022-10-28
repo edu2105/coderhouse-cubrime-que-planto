@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = ({navOptions, children}) => {
     let optionList = navOptions.map(({id, title, route}) =>
-    <NavLink to={route} key={id} end={route === "/" ? "end" : undefined}>{title}</NavLink>);
+    <NavLink className="nav-bar-link" to={route} key={id} end={route === "/" ? "end" : undefined}>{title}</NavLink>);
 
     return(
         <nav className="nav-bar">
-            <ul>
+            <ul className="nav-bar-list">
                 {optionList}
             </ul>
             {children}

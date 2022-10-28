@@ -12,7 +12,7 @@ const ItemListContainer = ({greeting}) => {
     const [loading, setLoading] = useState(true);
     const { categoryId } = useParams();
     const updateProducts = () => {
-        getDocsFromFirebase(categoryId, "category")
+        getDocsFromFirebase("category", categoryId)
             .then( (result) => {
                 const listProducts = result.docs.map( item => {
                     return {

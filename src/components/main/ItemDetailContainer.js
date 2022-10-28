@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     const [error, setError] = useState(false);
     const {productId} = useParams();
     const updateProducts = () => {
-        getDocsFromFirebase(productId, "id")
+        getDocsFromFirebase("id", productId)
             .then((result) => result.data() ? setProduct(result.data()) : setError(true))
             .catch((error) => {
                 console.log(error);

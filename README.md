@@ -47,7 +47,7 @@ Este sitio fue desarrollado usando **ReactJS** para el curso de Front-End Develo
 
 ### Nube
 - Firebase
-    + Se utiliza la base de datos de **Firestore Database**.
+    + Se utiliza la base de datos de **Firestore Database** para operar con todos los productos del vivero.
 
 ### Libererías y paquetes usados
 Se han utilizado los siguientes paquetes/librerías para mejorar el estilo y la experiencia de usuario del sitio

@@ -1,0 +1,19 @@
+.footer{
+    height: auto;
+    width: 100%;
+    background: var(--header-color-nav-buttons);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0; }
+    .footer .social-media > *{
+        margin: 0 1rem; }
+    .footer .nav-options{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center; }
+    .footer .nav-options > *{
+        margin: 1rem;
+        text-decoration: none;
+        font-size: 1.3rem; }

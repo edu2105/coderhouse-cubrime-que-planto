@@ -1,22 +1,39 @@
 import React from "react";
 import NavBar from "./navBar/NavBar";
-import CartWidget from "./navBar/CartWidget";
+import CartWidget from "./navBar/cartWidget/CartWidget";
 import { useState, useEffect, useRef } from "react";
 import logo from '../../images/cqp-logo.png';
-import '../../stylesheets/Header.css';
+import './Header.css';
 import { Link } from "react-router-dom";
-import SearchBar from "./navBar/SearchBar";
+import SearchBar from "./navBar/searchBar/SearchBar";
+import getNavOptions from "../../firebase/getNavOptions";
+
+const {initialNavOptions} = require('../../helpers/configuration');
 
 const Header = () => {
-    const {navOptions} = require('../../helpers/configuration');
+    const [navOptions, setNavOptions] = useState(initialNavOptions);
     const [className, setClassName] = useState("header");
     const headerRef = useRef();
-    const onScrollDown = e => {
+    const onScrollDown = () => {
         const navOffset = headerRef.current.offsetTop;
         return window.pageYOffset > navOffset ? setClassName("header scroll") : setClassName("header");
     };
+    const updateNavOptions = () =>{
+        getNavOptions()
+            .then((result) => {
+                const navOptionsList = result.docs.map((doc) => {
+                    return {
+                        ...doc.data()
+                    }
+                });
+                console.log(navOptionsList);
+                setNavOptions(navOptionsList);
+            });
+    }
 
     useEffect(() => {
+        updateNavOptions();
+
         window.addEventListener('scroll', onScrollDown);
 
         return () => {

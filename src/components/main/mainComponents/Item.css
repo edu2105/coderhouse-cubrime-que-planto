@@ -1,0 +1,109 @@
+.item{
+    position: relative;
+    width: 18.75rem;
+    height: 20rem;
+    background: rgba(131, 131, 131, 0.5);
+    backdrop-filter: blur(5px);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    border-radius: 1.2rem;
+    box-shadow: 3px 3px 5px rgb(199, 198, 198);}
+    .item .item-img-container{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: space-between; }
+        .item-img-container .mark{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: auto;
+            background-color: var(--main-color-cart);
+            color: white;
+            border-radius: 1rem 0 1rem 0;
+            padding: .3rem; }
+        .item-img-container .mark.red{
+            background-color: red; }
+        .item-img-container img{
+            position: relative;
+            object-fit: fill;
+            top: 10%;
+            width: 12.5rem;
+            height: 12.5rem;
+            z-index: 1;
+            max-width: 12.5rem;
+            align-self: center; }
+        .item-img-container img:hover{
+            z-index: 1000;
+            transform: scale(1.2);
+            transition: .5s; }
+        .item-details{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: .3rem .5rem 0 0; }
+            .item-title{
+                color: white;
+                margin-left: .3rem;
+                letter-spacing: .1rem; }
+            .item-watering-details{
+                display: flex;
+                flex-direction: column;
+                width: 100%; }
+                .item-watering{
+                    display: flex;
+                    justify-content: space-around; }
+            .item-type-details{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: .5rem; }
+                .item-type{
+                    display: flex;
+                    justify-content: flex-start; }
+                    .item-type-icon:nth-child(2){
+                        margin-left: .5rem; }
+            .item-details .item-price-wo-discount{
+                margin: .5rem .5rem 0 0;
+                color: rgb(182, 180, 180);
+                align-self: flex-end; }
+            .item-details .item-price{
+                font-size: 1.7rem;
+                margin: .5rem 0 0 0;
+                color: white;
+                -webkit-text-stroke: 1px var(--header-color-nav-buttons); }
+            .item-description{
+                position: absolute;
+                bottom: 5%;
+                left: 10%;
+                right: 10%;
+                height: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1.2rem;
+                background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.2));
+                box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
+                -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
+                .item-description:hover{
+                    background: transparent;
+                    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.1),
+                    -3px -3px 3px 0 rgba(255, 255, 255, 0.1); }
+                .item-description:active{
+                    background: linear-gradient(135deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25));
+                    box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
+                    -2px -2px 3px 0 rgba(255, 255, 255, 0.25);
+                    transition: .5s; }
+                .item-description h3{
+                    font-size: 1.3rem;
+                    color: var(--main-color-background);
+                    letter-spacing: .2rem; }
+@keyframes gradient{
+    0% {background-position: 0% 50%; }
+    50% {background-position: 100% 50%; }
+    100% {background-position: 0% 50%; }
+}

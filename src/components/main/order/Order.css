@@ -1,0 +1,126 @@
+.order-form-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem; }
+    .order-form-container .order-form{
+        width: 60%; }
+    .order-form-container .order-form-fieldset{
+        background-color: white;
+        border: none;
+        border-radius: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 5px 5px 6px black;
+        letter-spacing: 3px; }
+        .order-form-fieldset .order-form-legend{
+            font-size: 1.8rem;
+            margin: 0 1rem;
+            padding: 1rem;
+            font-weight: bold;
+            color: var(--header-color-nav-items-hover); }
+        .order-form-fieldset .order-form-title{
+            color: black;
+            font-weight: 300;
+            font-size: 1.2rem;
+            margin-top: 1rem; }
+    .order-form-container .order-form-details{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 1.2rem;
+        background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(200,200,200,0.2));
+        box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
+        -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
+        .order-form-details .form-floating-effect{
+            margin: 1.3rem .5rem;
+            position: relative; }
+            .form-floating-effect .floating-label{
+                position: absolute;
+                left: 5%;
+                background: transparent;
+                pointer-events: none;
+                top: 18%;
+                transition: .3s ease-out;
+                color: var(--header-color-nav-buttons);
+                font-size: 1rem;
+                letter-spacing: 1px; }
+            .form-floating-effect .floating-input{
+                padding: .4rem;
+                border-radius: .4rem;
+                border-color: white;
+                color: var(--header-color-nav-buttons);
+                font-size: 1rem;
+                font-family: 'Courgette', sans-serif;
+                letter-spacing: 2px;
+                min-width: 70%; }
+            .form-floating-effect .floating-input:focus +.floating-label{
+                transition: .3s ease-out;
+                top: -70%;
+                left: 0;
+                color: black; }
+            .form-floating-effect .floating-input:not(:placeholder-shown) +.floating-label{
+                top: -70%;
+                left: 0;
+                color: black; }
+        .order-form-fieldset .order-form-check{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            margin: 1rem;
+            padding: .5rem;
+            border-radius: 1.2rem;
+            width: 91%;
+            background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(200,200,200,0.2));
+            box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
+            -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
+            .order-form-check .order-switch{
+                align-self: center; }
+            .order-form-check .order{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                width: 33%; }
+                .order > *{
+                    color: rgb(139, 139, 139); }
+                .order.active > *{
+                    color: var(--header-color-nav-buttons); }
+                .order .order-detail{
+                    width: 100%;
+                    text-align: center;
+                    margin-top: .7rem;
+                    letter-spacing: 2px; }
+                .order .order-icon{
+                    font-size: 1.5rem; }
+        .order-form-fieldset .order-form-submit-container{
+            position: relative; }
+        .order-form-fieldset .order-form-submit{
+            position: relative;
+            width: auto;
+            padding: .5rem;
+            margin: 2rem 0;
+            cursor: pointer;
+            border-radius: .5rem;
+            border-color: transparent;
+            background-color: var(--main-color-background);
+            color: white;
+            font-family: 'Courgette', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 3px; }
+            .order-form-submit:hover{
+                background-color: var(--header-color-nav-items-hover); }
+            .order-form-submit:active{
+                background-color: var(--header-color-nav-items-focus); }
+        .order-form-fieldset .order-form-submit.disabled{
+            background-color: grey;
+            pointer-events: none; }

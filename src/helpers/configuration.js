@@ -1,27 +1,8 @@
-const navOptions = [
+const initialNavOptions = [
     {
-        title: "Inicio",
+        title: "cargando categorias...",
         id: 0,
-        isDropDown: false,
-        route: "/",
-    },
-    {
-        title: "De Interior",
-        id: 1,
-        isDropDown: false,
-        route: "/categoria/interior"
-    },
-    {
-        title: "De Exterior",
-        id: 2,
-        isDropDown: false,
-        route: "/categoria/exterior"
-    },
-    {
-        title: "Bonsáis",
-        id: 3,
-        isDropDown: false,
-        route: "/categoria/bonsai"
+        route: "",
     }
 ];
 
@@ -139,5 +120,16 @@ const initialProducts = [{
     }
 }];
 
+const initialOrder = {
+        name: "",
+        surname: "",
+        email: "",
+        address: "",
+        cardPayment: "",
+        cardDetails: {number: ""},
+        date: new Date(),
+        items: [{price: "", quantity: "", title: ""}],
+        totalPrice: ""
+};
 
-module.exports = {navOptions, initialProducts};
+module.exports = {initialNavOptions, initialProducts, initialOrder};

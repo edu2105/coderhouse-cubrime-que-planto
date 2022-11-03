@@ -1,0 +1,65 @@
+.credit-card-form-container{
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 6px black;
+    letter-spacing: 3px;
+    padding: 1rem;
+    width: 30%; }
+.credit-card-form-container .credit-card-form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    border-radius: 1.2rem;
+    background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.2));
+    box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
+    -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
+    .credit-card-form .form-card-input{
+        padding: .4rem;
+        margin: 1rem .5rem;
+        border-radius: .4rem;
+        border-color: white;
+        color: var(--header-color-nav-buttons);
+        font-size: 1.1rem;
+        font-family: 'Courgette', sans-serif;
+        letter-spacing: 2px;
+        width: 40%; }
+    .credit-card-form .form-submit{
+        margin: 1rem 4rem;
+        width: auto;
+        padding: .5rem;
+        cursor: pointer;
+        border-radius: .5rem;
+        border-color: transparent;
+        background-color: var(--header-color-nav-buttons);
+        color: white;
+        font-family: 'Courgette', sans-serif;
+        font-size: 1rem;
+        letter-spacing: 3px; }
+            .form-submit:hover{
+                background-color: var(--header-color-nav-items-hover); }
+            .form-submit:active{
+                background-color: var(--header-color-nav-items-focus); }
+    .credit-card-form .form-submit{
+        margin: 1rem 4rem;
+        width: auto;
+        padding: .5rem;
+        cursor: pointer;
+        border-radius: .5rem;
+        border-color: transparent;
+        background-color: var(--header-color-nav-buttons);
+        color: white;
+        font-family: 'Courgette', sans-serif;
+        font-size: 1rem;
+        letter-spacing: 3px; }
+.rccs{
+    width: 100%; }
+    .rccs__card{
+        width: 320px;
+        min-width: 290px; }

@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Cubrime Que Planto Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción + tutorial
+Este sitio es un e-commerce del vivero ***Cubrime Que Planto*** en el que se ofrecen productos (plantas) clasificados en 3 categorías
+- Bonsais
+- Plantas de Interior
+- Plantas de Exterior
 
-## Available Scripts
+![categories](./src/images/categories.jpg)
 
-In the project directory, you can run:
+En cada categoría se mostrarán todos los productos disponibles con información de:
+- Nombre del producto
+- Nivel de riego (bajo, medio o alto)
+- Tipo de luz (interior o exterior)
+- Precio original
+- Precio con descuento
 
-### `npm start`
+![product info](./src/images/product-info.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Se podrá ingresar a cada producto individualmente para encontrar información más detallada así como el stock disponible.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![product detail](./src/images/product-detail.jpg)
 
-### `npm test`
+El usuario agregará a la canasta tantos productos como desee sin superar el stock y podrá finalizar la compra en cualquier momento mientras las cookies sigan activas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![cart detail](./src/images/cart-detail.jpg)
 
-### `npm run build`
+La entrega de los productos podrán hacerse de las siguientes maneras:
+- Retiro en local
+- Entrega a docmicilio
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Los medio de pago soportados son:
+- Efectivo
+- Tarjeta de Débito
+- Tarjeta de Crédito
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Al finalizar la orden de compra, el sitio devolverá un número de orden que podrá ser usado para ver los detalles en el momento que el usuario lo desee.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![orden](./src/images/order-id.jpg)
 
-### `npm run eject`
+Los detalles se mostrarán al usar el buscador "Ordenes" en el encabezado del sitio y el usuario podrá ver todos los detalles de la orden haciendo click en el número.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![orden](./src/images/order-search.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tecnología
+Este sitio fue desarrollado usando **ReactJS** para el curso de Front-End Developer de Coderhouse.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Nube
+- Firebase
+    + Se utiliza la base de datos de **Firestore Database**.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Libererías y paquetes usados
+Se han utilizado los siguientes paquetes/librerías para mejorar el estilo y la experiencia de usuario del sitio
 
-## Learn More
+- [React Credit Cards](https://www.npmjs.com/package/react-credit-cards)
+    + Para generar una vista con estilo de la tarjeta de crédito/débito que el usuario cargue al momento de finalizar la compra.
+- [React Toastify](https://www.npmjs.com/package/react-toastify)
+    + Para mostrar notificaciones al usuario cuando se agregua un producto a la canaste o se copia el número de orden.
+- [React Cookie Consent](https://www.npmjs.com/package/react-cookie-consent) 
+    + Para pedir el consentimiento del usuario al usar cookies para mejorar la experiencia en el sitio.
+- [Material UI](https://mui.com/)
+    + Para el estilo del sitio.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contacto
+Revisa otros proyectos / sitios en [Github](https://github.com/edu2105)

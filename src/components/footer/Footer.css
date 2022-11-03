@@ -6,14 +6,53 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0; }
+    padding: 1rem 0;
+    color: rgb(207, 207, 207);
+    letter-spacing: 1px; }
     .footer .social-media > *{
         margin: 0 1rem; }
+        .social-media a{
+            color: white; }
+        .social-media a:link{
+            color: white; }
+        .social-media a:visited{
+            color: white; }
     .footer .nav-options{
         display: flex;
         flex-wrap: wrap;
-        align-items: center; }
+        align-items: center;
+        justify-content: center; }
     .footer .nav-options > *{
         margin: 1rem;
         text-decoration: none;
         font-size: 1.3rem; }
+        .nav-options a{
+            color: white; }
+        .nav-options a:link{
+            color: white; }
+        .nav-options a:visited{
+            color: white; }
+    .footer .contact-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+    .footer .copyright-info{
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around; }
+    .footer .info-item{
+        display: flex;
+        align-items: center;
+        margin: .2rem; }
+        .info-item span{
+            margin-left: .3rem; }
+        .info-item a{
+            color: white; }
+        .info-item a:link{
+            color: white; }
+        .info-item a:visited{
+            color: white; }

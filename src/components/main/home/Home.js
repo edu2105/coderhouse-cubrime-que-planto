@@ -38,7 +38,7 @@ const Home = () => {
                         <Link to="/categoria/exterior"><button className="button-ext">Exterior</button></Link>
                     </div>
                 </section>
-            </div>
+            </div>            
         </div>
     );
 };

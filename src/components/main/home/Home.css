@@ -39,7 +39,7 @@
             color: var(--header-color-nav-buttons); }
         .home-container .home-buttons-container{
             margin-top: 4rem;
-            max-width: 40%;
+            max-width: 50%;
             display: flex;
             justify-content: space-around; }
             .home-container .home-buttons-container button{

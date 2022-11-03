@@ -7,6 +7,7 @@ import Cart from "./cart/Cart";
 import Home from "./home/Home";
 import PageNotFound from "./notFound/PageNotFound";
 import OrderDetailContainer from "./order/OrderDetailContainer";
+import CookieConsent from "react-cookie-consent";
 
 const Main = () => {
     const greeting = "🌱Mirá, elegí y suma más vida a tu vida🪴";
@@ -21,6 +22,14 @@ const Main = () => {
                 <Route path="/orden/:orderId" element={<OrderDetailContainer />}/>
                 <Route path="*" element={<PageNotFound />}/>
             </Routes>
+            <CookieConsent
+                location="bottom"
+                buttonText="Entiendo y Acepto"
+                cookieName="cookieConsentOk"
+                style={{ textAlign: "center", background: "#42bb13", color: "#cfcfcf", fontSize: "1.2rem" }}
+                buttonStyle={{ background: "#0092a5", borderRadius: ".5rem", padding: ".5rem", color: "#cfcfcf", fontSize: "13px" }}>
+                    Este sitio utiliza cookies para agilizar tu experiencia de compra
+            </CookieConsent>
         </main>
     );
 };

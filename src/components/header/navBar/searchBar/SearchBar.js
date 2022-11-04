@@ -6,18 +6,18 @@ import { Link } from 'react-router-dom';
 
 const SearchBar = () => {
     const [results, setResults] = useState([]);
+    const [searchFinished, setSearchFinished] = useState(false);
     const searchInputRef = useRef();
 
-    const unFocusInput = (e) => {
-        e.target.value=""
-    };
+    const unFocusInput = (e) => e.target.value="";
     const searchString = (string) => {
         if(!string){
-            setResults([]);
+            clearResults();
             return;
         };
         getProducts("title", string)
             .then( (result) => {
+                setSearchFinished(true);
                 const listMatches = result.docs.map( item => {
                     return { ...item.data() }
                 });
@@ -25,11 +25,12 @@ const SearchBar = () => {
             })
             .catch((error) => {
                 console.log(error);
-            })
+            });
     };            
     const clearResults = () => {
         searchInputRef.current.value = "";
         setResults([]);
+        setSearchFinished(false);
     };
 
     return (
@@ -39,17 +40,21 @@ const SearchBar = () => {
                 <SearchIcon className='searchbar-icon'/>
                 <span className='search-placeholder'>Buscar...</span>
             </div>
-            <ul className={ results.length ? "search-results visible" : "search-results"}>
-                {results.map( (item) => {
-                    return(
-                        <li className='search-item' key={item.id} onClick={clearResults}>
-                            <Link className='search-item-link' to={`/producto/${item.id}`}>
-                                <img className='item-img' src={item.pictureUrl} alt={item.title} />
-                                <span className='item-title'>{item.title}</span>
-                            </Link>
-                        </li>
-                    )
-                })}
+            <ul className={ searchFinished ? "search-results visible" : "search-results"}>
+                {results.length ? (
+                    results.map(({id, title, pictureUrl}) => {
+                        return(
+                            <li className='search-item' key={id} onClick={clearResults}>
+                                <Link className='search-item-link' to={`/producto/${id}`}>
+                                    <img className='item-img' src={pictureUrl} alt={title} />
+                                    <span className='item-title'>{title}</span>
+                                </Link>
+                            </li>
+                        )
+                    })
+                ) : (
+                    <li className='search-item-notfound'>No hay resultados disponibles</li>
+                )}
             </ul>
         </div>
     )

@@ -14,9 +14,7 @@ const CartWidget = () => {
     const badgeColors = {
         "& .MuiBadge-badge": {
           color: "white",
-          backgroundColor: "#d204f5"
-        }
-      };
+          backgroundColor: "#d204f5" } };
     const { totalQty } = useContext(Context);
 
     return(

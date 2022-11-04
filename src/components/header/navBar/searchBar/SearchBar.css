@@ -54,6 +54,13 @@
         height: auto;
         transition: 1s ease-out;
         z-index: 2; }
+        .search-results .search-item-notfound{
+            color: red;
+            list-style: none;
+            padding: .5rem;
+            font-size: .8rem;
+            text-align: center;
+        }
         .search-results .search-item{
             list-style: none;
             width: 100%; }

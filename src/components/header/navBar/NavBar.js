@@ -39,7 +39,7 @@ const NavBar = ({navOptions, children}) => {
                 setError(false);
                 setIsLoading(false);
                 let date = new Date(1970, 0, 1);
-                date.setSeconds(result.data().date.seconds);
+                date.setSeconds(result.data().date.seconds - 10800);
                 setOrderResult({
                     ...orderResult,
                     orderId: id, 

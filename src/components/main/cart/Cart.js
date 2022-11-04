@@ -15,7 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
-    const { cart, totalQty, totalPrice, deleteItem, clear } = useContext(Context);
+    const { cart, totalQty, totalPrice, addItem, deleteItem, clear } = useContext(Context);
     const [swalProps, setSwalProps] = useState({});
     const [enableProgress, setEnableProgress] = useState(false);
     const [orderId, setOrderId] = useState();
@@ -32,6 +32,13 @@ const Cart = () => {
             progress: undefined,
             theme: "light"
         });
+    };
+    const countHandler = (op, item) => {
+        if(item.quantity !== item.stock && op === 1){
+            addItem(item, 1)
+        }else if(item.quantity > 1 && op === -1){
+            addItem(item, -1);
+        }
     };
     const onOrderFormSubmitHandler = (event, formData) => {
         event.preventDefault();
@@ -95,7 +102,11 @@ const Cart = () => {
                                         <img src={item.pictureUrl} alt={item.title} />
                                         <section className="price-details">
                                             <h3>{item.title}</h3>
-                                            <span>{item.quantity} x {item.finalPricePerUnit}</span>
+                                            <div className="quantity-mod">
+                                                <button className="quantity-remove" onClick={() => countHandler(-1, item)}>-</button>
+                                                <span>{item.quantity} x {item.finalPricePerUnit}</span>
+                                                <button className="quantity-add" onClick={() => countHandler(1, item)}>+</button>
+                                            </div>
                                         </section>
                                         <section className="price-final">
                                             <h3>$ {item.finalPrice}</h3>

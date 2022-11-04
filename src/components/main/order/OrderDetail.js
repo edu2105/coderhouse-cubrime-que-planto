@@ -3,7 +3,7 @@ import './OrderDetail.css';
 
 const OrderDetail = ({id, order}) => {
     let date = new Date(1970, 0, 1);
-    date.setSeconds(order.date.seconds);
+    date.setSeconds(order.date.seconds - 10800);
 
     return (
         <div className='order-detail-container'>

@@ -20,7 +20,7 @@ const ItemCount = ({initialValue, stock, onAdd, extraStyles}) => {
 
     return(
         <div className="item-count-container" style={extraStyles}>
-            {isMaxStock && <span className="item-error-msg">No puedes superar el stock</span>}
+            {isMaxStock && <span className="item-error-msg">{ stock === 0 ? 'No hay stock disponible' : 'No puedes superar el stock'}</span>}
             <div className="item-count-ui">
                 <button className="item-btn left" onClick={() => countHandler(-1)} disabled={count <= 0 ? "disabled" : undefined}>-</button>
                 <input type="number" name="items" id="items-count" value={count} readOnly/>

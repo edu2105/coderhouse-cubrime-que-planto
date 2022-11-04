@@ -76,6 +76,7 @@
                 align-items: center;
                 justify-content: space-between;
                 width: 100%;
+                height: 5rem;
                 padding: .5rem 0;
                 margin: 1rem 0;
                 border-radius: 1.2rem;
@@ -84,11 +85,37 @@
                 -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
                 .cart-item-detail img{
                     width: 12%;
-                    height: 12%;
+                    height: 100%;
                     margin-left: 2rem; }
                 .cart-item-detail .price-details{
                     width: 50%;
-                    text-align: center; }
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center; }
+                    .price-details .quantity-mod{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center; }
+                        .quantity-mod button{
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            margin: 0 1rem;
+                            font-size: 1.2rem;
+                            border-radius: 50%;
+                            border: none;
+                            background-color: grey;
+                            color: white;
+                            box-shadow: 3px 3px 5px black;
+                            cursor: pointer; }
+                        .quantity-mod button:hover{
+                            background-color: white;
+                            color: grey; }
+                        .quantity-mod button:active{
+                            background-color: white;
+                            color: grey;
+                            box-shadow: unset; }
                 .cart-item-detail .price-final{
                     width: 20%;
                     display: flex;

@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cards from 'react-credit-cards';
 import "react-credit-cards/es/styles-compiled.css";
 import './CreditCardForm.css';
-import { useState } from 'react';
  
 const CreditCardForm = ({onSubmitHandler}) => {
     const [cardData, setCardData] = useState({

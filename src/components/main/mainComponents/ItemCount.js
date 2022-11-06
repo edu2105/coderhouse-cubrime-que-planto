@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import './ItemCount.css';
 
-const ItemCount = ({initialValue, stock, onAdd, extraStyles}) => {
-    const [count, setCount] = useState(initialValue);
+const ItemCount = ({stock, onAdd, extraStyles}) => {
+    const [count, setCount] = useState(0);
     const [isMaxStock, setIsMaxStock] = useState(false);
     const [cartDisabled, setCartDisabled] = useState(true);
-    let aux = initialValue;
+    let aux = 0;
 
     const countHandler = op => {
         if(count !== stock || op !== 1){

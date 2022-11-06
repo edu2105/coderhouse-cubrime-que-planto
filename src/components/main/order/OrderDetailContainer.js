@@ -21,7 +21,6 @@ const OrderDetailContainer = () => {
 
     useEffect(() => {
         updateOrderDetails();
-        console.log(orderId);
     }, [orderId])
     
 

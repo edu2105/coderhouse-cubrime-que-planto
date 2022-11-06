@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import './PageNotFound.css'
 import plant from '../../../images/plant404.png';
+import './PageNotFound.css'
 
 const PageNotFound = () => {
     const [enableOnMouseMove, setEnableOnMouseMove] = useState(true);
@@ -41,13 +41,13 @@ const PageNotFound = () => {
             <div className="page-message-container">
                 <div className="page-message">
                     <article>
-                        Parece que la página o producto que estás buscando no existe
+                        Parece que la página o producto que estás buscando no existe o no se encuentra disponible en este momento
                     </article>
                 </div>
                 <img src={plant} alt="404 logo" onClick={toggleOnMouseMove} onMouseMove={enableOnMouseMove ? followPointer : undefined} ref={imgRef} style={imgStyle}/>
                 <div className="page-message">
                     <article>
-                        Usa la barra de inicio para acceder a nuestro contenido disponible
+                        Usa la barra de inicio para acceder a todo nuestro contenido disponible
                     </article>
                 </div>
             </div>

@@ -1,11 +1,9 @@
-import React from "react";
-import './Footer.css'
+import React, { useState, useEffect } from "react";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import { NavLink } from "react-router-dom";
 import getNavOptions from '../../firebase/getNavOptions';
-import { useState, useEffect } from "react";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -13,11 +11,14 @@ import PlaceIcon from '@mui/icons-material/Place';
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import CodeIcon from '@mui/icons-material/Code';
 import AttributionIcon from '@mui/icons-material/Attribution';
+import CircularProgress from '@mui/material/CircularProgress';
+import './Footer.css'
 
 const {initialNavOptions} = require('../../helpers/configuration');
 
 const Footer = () => {
     const [navOptions, setNavOptions] = useState(initialNavOptions);
+    const [isLoading, setIsLoading] = useState(true);
     const updateNavOptions = () =>{
         getNavOptions()
             .then((result) => {
@@ -27,6 +28,7 @@ const Footer = () => {
                     }
                 });
                 setNavOptions(navOptionsList);
+                setIsLoading(false);
             });
     }
 
@@ -41,10 +43,12 @@ const Footer = () => {
                 <a href="https://www.facebook.com/groups/1000488043331424/" target="_blank" rel="noopener noreferrer"><FacebookIcon style={{fontSize: "1.8rem"}} /></a>
                 <a href="https://ar.pinterest.com/search/pins/?q=planta&rs=typed" target="_blank" rel="noopener noreferrer"><PinterestIcon style={{fontSize: "1.8rem"}} /></a>
             </section>
-            <section className="nav-options">
-                {navOptions.map(({id, title, route}) =>
-                    <NavLink className="nav-bar-link" to={route} key={id} end={route === "/" ? "end" : undefined}>{title}</NavLink>)}
-            </section>
+            {isLoading ? <CircularProgress /> : (
+                <section className="nav-options">
+                    {navOptions.map(({id, title, route}) =>
+                        <NavLink className="nav-bar-link" to={route} key={id} end={route === "/" ? "end" : undefined}>{title}</NavLink>)}
+                </section>
+            )}
             <section className="contact-info">
                 <div className="info-item">
                     <WhatsAppIcon /> 

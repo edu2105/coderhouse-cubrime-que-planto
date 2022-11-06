@@ -1,10 +1,10 @@
 import React from "react";
-import './Item.css';
 import WaterIcon from '@mui/icons-material/Water';
 import HomeIcon from '@mui/icons-material/Home';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import { Skeleton } from "@mui/material";
 import { Link } from "react-router-dom";
+import './Item.css';
 
 const Item = ({id, title, pictureUrl, stock, pricing, caring, loading}) => {
     const waterIconsTotal = [1,2,3];

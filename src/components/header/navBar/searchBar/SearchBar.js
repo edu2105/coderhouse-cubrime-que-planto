@@ -21,7 +21,7 @@ const SearchBar = () => {
                 const listMatches = result.docs.map( item => {
                     return { ...item.data() }
                 });
-                listMatches.length && setResults(listMatches);
+                listMatches.length ? setResults(listMatches) : setResults([]);
             })
             .catch((error) => {
                 console.log(error);
@@ -29,8 +29,8 @@ const SearchBar = () => {
     };            
     const clearResults = () => {
         searchInputRef.current.value = "";
-        setResults([]);
         setSearchFinished(false);
+        setResults([]);
     };
 
     return (

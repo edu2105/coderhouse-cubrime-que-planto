@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch } from '@mui/material';
-import { Link } from 'react-router-dom';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
-import './Order.css';
 import CreditCardForm from './creditCardForm/CreditCardForm';
-import { useEffect } from 'react';
+import './Order.css';
 
 const Order = ({onSubmitForm}) =>{
     const [isDelivery, setIsDelivery] = useState(false);
@@ -115,7 +113,7 @@ const Order = ({onSubmitForm}) =>{
                     <section className="order-form-check">
                         <div className={isDelivery ? 'order' : 'order active'}>
                             <StorefrontIcon className='order-icon' />
-                            <p className='order-detail'>Retiralo en alguno de <Link to="/canasta">nuestros locales</Link></p>
+                            <p className='order-detail'>Retiralo en <a href="https://www.google.com/maps/place/Habana+y+Segurola/@-34.6007808,-58.520578,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcb77a562dcd87:0x7882eb67703b848!8m2!3d-34.6007885!4d-58.5183861" target="_blank" rel="noopener noreferrer">nuestro local</a></p>
                         </div>
                         <Switch 
                             onChange={(e) => deliveryOnChangeHandler(e.target.checked)}

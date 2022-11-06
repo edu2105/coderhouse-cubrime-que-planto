@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import SearchBar from "./navBar/searchBar/SearchBar";
 import CircularProgress from '@mui/material/CircularProgress';
 import getNavOptions from "../../firebase/getNavOptions";
-import './Header.css';
 import OrderSearch from "./navBar/orderSearch/OrderSearch";
+import './Header.css';
 
 const {initialNavOptions} = require('../../helpers/configuration');
 
@@ -28,7 +28,6 @@ const Header = () => {
                         ...doc.data()
                     }
                 });
-                console.log(navOptionsList);
                 setNavOptions(navOptionsList);
                 setIsLoading(false);
             });
@@ -53,11 +52,11 @@ const Header = () => {
                     <Link to="/">
                         <img className="logo" src={logo} alt="Logo" />
                     </Link>
-                    <NavBar navOptions={navOptions}>
-                        <SearchBar />
+                    <NavBar navOptions={navOptions}>                        
                         <CartWidget />
                         <OrderSearch />
                     </NavBar>
+                    <SearchBar />
                 </>
             ) }
         </header>

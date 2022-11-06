@@ -20,7 +20,11 @@
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  font-family: 'Courgette', sans-serif; }
+  font-family: 'Courgette', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center; }
 
 @media (max-width: 1078px) {
     html {

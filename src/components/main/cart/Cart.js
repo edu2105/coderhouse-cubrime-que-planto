@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import './Cart.css';
 import { Context } from '../../../context/CartContext';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -12,6 +11,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import updateProducts from "../../../firebase/updateProducts";
 import { ToastContainer, toast } from 'react-toastify';
+import './Cart.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
@@ -35,10 +35,10 @@ const Cart = () => {
     };
     const countHandler = (op, item) => {
         if(item.quantity !== item.stock && op === 1){
-            addItem(item, 1)
+            addItem(item, 1);
         }else if(item.quantity > 1 && op === -1){
             addItem(item, -1);
-        }
+        };
     };
     const onOrderFormSubmitHandler = (event, formData) => {
         event.preventDefault();

@@ -8,7 +8,7 @@ const OrderDetail = ({id, order}) => {
     return (
         <div className='order-detail-container'>
             <section className='order-detail-section'>
-                <h2 className='title'>Orden de compra</h2>
+                <h2 className='title'>Detalle de la orden</h2>
                 <h3 className='sub-title'>{id}</h3>
                 <div className="sub-sections-container">
                     <section className='personal-details-section'>

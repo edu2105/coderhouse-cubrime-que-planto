@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
-import './ItemListContainer.css'
 import ItemList from "./ItemList";
 import { Navigate, useParams } from "react-router-dom";
 import getProducts from "../../../firebase/getProducts";
+import './ItemListContainer.css'
 
 const {initialProducts} = require('../../../helpers/configuration');
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
     const [products, setProducts] = useState(initialProducts);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -20,12 +20,12 @@ const ItemListContainer = ({greeting}) => {
                         docId: item.id
                     }
                 });
-                console.log(listProducts);
                 listProducts.length ? setProducts(listProducts) : setError(true);
                 setLoading(false);
             })
             .catch((error) => {
                 console.log(error);
+                setError(true);
             });
     };
 
@@ -36,7 +36,7 @@ const ItemListContainer = ({greeting}) => {
     return(
         <div className="item-list-container">
             { error && <Navigate to="/oops" replace={true}/> }
-            <h1>{greeting}</h1>
+            <h1><span role="img" aria-label="growing-plant">🌱</span>Mirá, elegí y suma más vida a tu vida<span role="img" aria-label="plant">🪴</span></h1>
             <ItemList products={products} loading={loading} />
         </div>
     );

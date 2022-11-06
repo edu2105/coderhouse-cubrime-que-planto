@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import ItemCount from "./ItemCount";
-import './ItemDetail.css';
 import { Link } from "react-router-dom";
 import { Context } from '../../../context/CartContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './ItemDetail.css';
 
 const ItemDetail = (product) => {
     const priceWithDiscount = product.pricing.netAmount - ((product.pricing.netAmount * product.pricing.discountPercentage) / 100);
@@ -24,7 +24,12 @@ const ItemDetail = (product) => {
             theme: "colored",
             });
         setIsAddToCartClicked(true);
-        addItem({...product, finalPricePerUnit: priceWithDiscount, finalPrice: priceWithDiscount * count, quantity: count}, count);
+        addItem(
+            {   ...product,
+                finalPricePerUnit: priceWithDiscount,
+                finalPrice: priceWithDiscount * count,
+                quantity: count
+            }, count);
     };
     
     return(
@@ -50,7 +55,6 @@ const ItemDetail = (product) => {
                             <Link to="/canasta"><button className={isAddToCartClicked ? "end-btn visible" : "end-btn"}>Finalizar compra</button></Link>
                             <ItemCount 
                                 extraStyles={isAddToCartClicked ? {display: "none"} : {display: "block"}}
-                                initialValue={0}
                                 stock={product.stock}
                                 onAdd={onAdd} />
                         </div>

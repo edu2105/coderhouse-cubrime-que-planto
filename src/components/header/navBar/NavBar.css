@@ -1,6 +1,4 @@
 .nav-bar{
-    width: 80%;
-    margin-right: 1rem;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -15,8 +13,11 @@
         padding: .5rem 1rem;
         text-decoration: none;
         font-size: 1.3rem;
-        color: var(--header-color-nav-items);
-    }
+        color: var(--header-color-nav-items); }
+    .nav-bar .nav-bar-list .nav-bar-link:first-child{
+            margin-left: 0; }
+    .nav-bar .nav-bar-list .nav-bar-link:last-child{
+        margin-right: 0; }
     .nav-bar .nav-bar-list .nav-bar-link::after{
         content: "";
         display: block;

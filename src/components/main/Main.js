@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Main.css';
 import ItemDetailContainer from "./mainComponents/ItemDetailContainer";
 import ItemListContainer from "./mainComponents/ItemListContainer";
@@ -10,13 +10,16 @@ import OrderDetailContainer from "./order/OrderDetailContainer";
 import CookieConsent from "react-cookie-consent";
 
 const Main = () => {
-    const greeting = "🌱Mirá, elegí y suma más vida a tu vida🪴";
-    
+
+    useEffect(() => {
+        window.onbeforeunload = () => window.scrollTo(0, 0);
+    }, []);
+
     return(
         <main className="main">
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/categoria/:categoryId" element={<ItemListContainer greeting={greeting} />} />
+                <Route path="/categoria/:categoryId" element={<ItemListContainer />} />
                 <Route path="/producto/:productId" element={<ItemDetailContainer />}/>
                 <Route path="/canasta" element={<Cart />}/>
                 <Route path="/orden/:orderId" element={<OrderDetailContainer />}/>

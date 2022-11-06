@@ -1,6 +1,5 @@
 import React from "react";
 import './Home.css';
-import { Link } from "react-router-dom";
 
 const Home = () => {
     return(
@@ -26,17 +25,12 @@ const Home = () => {
                         <span>a</span>
                     </div>
                     <article>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo harum non repellendus id ut possimus consectetur commodi, animi aspernatur est perspiciatis, tenetur molestias dignissimos aperiam? Quas provident deserunt animi quidem qui sed dolores esse, nesciunt deleniti quia exercitationem ad veritatis, numquam ratione nemo eum sunt adipisci assumenda dignissimos nulla. In
+                        En Cubrime Que Planto amamos la naturaleza y te invitamos a conectar con todas nuestras plantas para que puedas llenar de vida y alegría tu hogar o jardín. Somos un vivero dónde, además de todas nuestras plantas, podrás asesorarte sobre tratamientos, cultivo, podas, cuidado y mucho más. Te esperamos de Lunes a Sábados de 8:00 a 17:00hs. 
                     </article>
                 </section>
                 <section>
                     <h2>Conocé nuestras plantas</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, modi.</p>
-                    <div className="home-buttons-container">
-                        <Link to="/categoria/bonsai"><button className="button-bon">Bonsais</button></Link>
-                        <Link to="/categoria/interior"><button className="button-int">Interior</button></Link>
-                        <Link to="/categoria/exterior"><button className="button-ext">Exterior</button></Link>
-                    </div>
+                    <p>Contamos con plantas de interor, exterior y bonsais especialmente traídos de Okinawa. Te invitamos a que uses la barra de navegación superior para recorrer todas las opciones.</p>
                 </section>
             </div>            
         </div>

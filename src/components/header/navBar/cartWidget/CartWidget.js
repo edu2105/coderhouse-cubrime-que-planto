@@ -1,16 +1,10 @@
 import React, { useContext } from "react";
 import './CartWidget.css';
-import Button from '@mui/material/Button';
-import ShoppingCartRounded from '@mui/icons-material/ShoppingCartRounded';
 import Badge from '@mui/material/Badge';
 import { Link } from "react-router-dom";
 import { Context } from '../../../../context/CartContext';
 
-const CartWidget = () => {
-    const buttonStyle = {
-        fontFamily: 'Courgette', 
-        fontSize: "1.1rem", 
-        backgroundColor: "#0092a5" };
+const CartWidget = ({children}) => {
     const badgeColors = {
         "& .MuiBadge-badge": {
           color: "white",
@@ -29,12 +23,7 @@ const CartWidget = () => {
                 <Link 
                     to="/canasta"
                     style={{textDecoration: "none"}}>
-                    <Button 
-                        variant="contained" 
-                        startIcon={<ShoppingCartRounded />}
-                        style={buttonStyle}>
-                        Canasta
-                    </Button>
+                    {children}
                 </Link>
             </Badge>
         </div>

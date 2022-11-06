@@ -8,6 +8,9 @@
         display: flex;
         justify-content: center;
         align-items: center; }
+    .nav-bar .nav-bar-list.mobile{
+        margin-top: 2rem;
+        flex-direction: column; }
     .nav-bar .nav-bar-list .nav-bar-link{
         margin: 0 1rem;
         padding: .5rem 1rem;
@@ -38,6 +41,15 @@
         border-radius: 50%;
         border: 1px solid white;
         background-color: var(--header-color-nav-items-hover-underline); }
+    .nav-bar .nav-bar-list.mobile > *{
+            margin: 1rem 0; }
+    .nav-bar .nav-bar-list.mobile > *:hover{
+        color: var(--main-color-background);
+        transition: unset; }
+    .nav-bar .nav-bar-list.mobile > *:active{
+        border-radius: unset;
+        border: unset;
+        background-color: unset; }
     .nav-bar .nav-bar-list .option-login{
         display: flex;
         align-items: center;

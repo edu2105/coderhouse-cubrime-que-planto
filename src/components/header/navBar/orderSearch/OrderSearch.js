@@ -1,8 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import getOrders from "../../../../firebase/getOrders";
 import CircularProgress from '@mui/material/CircularProgress';
+import { MobileContext } from '../../../../context/MobileContext';
 import { Link } from "react-router-dom";
 import './OrderSearch.css';
 
@@ -10,6 +10,7 @@ const OrderSearch = () => {
     const [orderSearch, setOrderSearch] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
+    const {navMobileToggleHandler} = useContext(MobileContext);
     const [orderResult, setOrderResult] = useState({
         orderId: "", 
         totalQty: "", 
@@ -19,6 +20,7 @@ const OrderSearch = () => {
     const clearSearch = () => {
         setOrderResult("");
         setOrderSearch(false);
+        navMobileToggleHandler(false);
     }
     const onOrderSearchClickHandler = () => {
         orderSearch && setOrderResult("");

@@ -1,12 +1,14 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import './SearchBar.css';
 import getProducts from "../../../../firebase/getProducts";
 import { Link } from 'react-router-dom';
+import { MobileContext } from "../../../../context/MobileContext";
+import './SearchBar.css';
 
 const SearchBar = () => {
     const [results, setResults] = useState([]);
     const [searchFinished, setSearchFinished] = useState(false);
+    const {navMobileToggleHandler, mobileHeader} = useContext(MobileContext);
     const searchInputRef = useRef();
 
     const unFocusInput = (e) => e.target.value="";
@@ -34,7 +36,7 @@ const SearchBar = () => {
     };
 
     return (
-        <div className='searchbar-container'>
+        <div className={mobileHeader ? 'searchbar-container mobile' : 'searchbar-container'}>
             <input className='search-input' type='search' ref={searchInputRef} onFocus={() => {setResults([])}} onBlur={unFocusInput} onChange={(e) => searchString(e.target.value)} />
             <div className="search-background">
                 <SearchIcon className='searchbar-icon'/>
@@ -45,7 +47,10 @@ const SearchBar = () => {
                     results.map(({id, title, pictureUrl}) => {
                         return(
                             <li className='search-item' key={id} onClick={clearResults}>
-                                <Link className='search-item-link' to={`/producto/${id}`}>
+                                <Link 
+                                    className='search-item-link' 
+                                    to={`/producto/${id}`}
+                                    onClick={() => navMobileToggleHandler(false)} >
                                     <img className='item-img' src={pictureUrl} alt={title} />
                                     <span className='item-title'>{title}</span>
                                 </Link>

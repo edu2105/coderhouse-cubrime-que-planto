@@ -6,6 +6,12 @@
     transition: 1s ease-out;
     width: 10%;
     margin: 0 1rem; }
+.searchbar-container.mobile{
+    width: 100%;
+    margin: 2rem 0; }
+.searchbar-container.mobile:focus-within{
+    width: 100%;
+    margin: 2rem 0; }
 .searchbar-container:focus-within{
     width: 12%;
     transition: 1s ease-out; }

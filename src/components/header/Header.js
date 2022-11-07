@@ -56,12 +56,12 @@ const Header = () => {
     useEffect(() => {
         updateNavOptions();
 
-        window.addEventListener('scroll', onScrollDown);
+        !mobileHeader && window.addEventListener('scroll', onScrollDown);
 
         return () => {
-            window.removeEventListener('scroll', onScrollDown);
+            !mobileHeader && window.removeEventListener('scroll', onScrollDown);
         }
-    },[]);
+    },[mobileHeader]);
 
     return(
         <>
@@ -89,7 +89,7 @@ const Header = () => {
                         </>
                     ) }
                 </header>
-                ) : (<header className="header-mobile scroll" ref={headerRef}>
+                ) : (<header className="header-mobile scroll" style={isLoading ? {alignItems: "unset", justifyContent: "center"} : {}} ref={headerRef}>
                 {isLoading ? (
                     <CircularProgress style={{marginTop: "1rem"}}/>
                 ) : (
@@ -100,7 +100,11 @@ const Header = () => {
                             toggled={navMobileToggled}
                             onToggle={toggled => {onToggleHandler(toggled)}} />
                         <Link to="/">
-                            <img className="logo" src={logo} alt="Logo" />
+                            <img 
+                                className="logo" 
+                                src={logo} 
+                                alt="Logo"
+                                onClick={() => {navMobileToggleHandler(false)}} />
                         </Link>
                         <CartWidget>
                             <AddShoppingCartIcon 

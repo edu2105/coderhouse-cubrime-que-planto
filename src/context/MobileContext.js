@@ -4,7 +4,7 @@ export const MobileContext = createContext();
 export const WidthProvider = ({children}) => {
     const [windowWidth, setWindowWith] = useState(window.innerWidth);
     const [navMobileToggled, setNavMobileToggled] = useState(false);
-    let mobileHeader = windowWidth < 940;
+    let mobileHeader = windowWidth < 941;
 
     const handleWindowWidth = () => {
         setWindowWith(window.innerWidth);
@@ -14,7 +14,7 @@ export const WidthProvider = ({children}) => {
     };
 
     useEffect(() => {
-        mobileHeader = windowWidth < 940;
+        mobileHeader = windowWidth < 941;
         window.addEventListener('resize', handleWindowWidth)
 
         return () => {

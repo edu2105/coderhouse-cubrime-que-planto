@@ -6,5 +6,23 @@
     width: 100%; }
     .item-list li{
         margin: 2rem 3rem;
-        list-style: none;
-    }
+        list-style: none; }
+
+@media(max-width: 700px) {
+    .item-list li{
+        margin: 2rem 1rem;
+        max-width: 43vw; }
+}
+
+@media(max-width: 498px) {
+    .item-list{
+        justify-content: unset; }
+}
+
+@media(max-width: 345px) {
+    .item-list{
+        justify-content: center; }
+    .item-list li{
+        max-width: unset;
+        width: 85%; }
+}

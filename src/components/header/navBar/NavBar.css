@@ -63,9 +63,10 @@
         background-color: var(--header-nav-color-login); }
 
 
-    @media (max-width: 970px) {
-        .nav-bar{
-            justify-content: space-evenly; }
-            .nav-bar .nav-bar-list li{
-                margin: 0 1rem; }
-        }
+@media (max-width: 940px) {
+    .nav-bar{
+    justify-content: space-evenly;
+    margin-top: 3rem;}
+        .nav-bar .nav-bar-list li{
+            margin: 0 1rem; }
+    }

@@ -7,8 +7,9 @@
     align-items: center;
     box-shadow: 5px 5px 6px black;
     letter-spacing: 3px;
+    margin-top: 1rem;
     padding: 1rem;
-    width: 30%; }
+    width: 29%; }
 .credit-card-form-container .credit-card-form{
     display: flex;
     flex-direction: row;
@@ -61,5 +62,16 @@
 .rccs{
     width: 100%; }
     .rccs__card{
-        width: 320px;
-        min-width: 290px; }
+        width: 290px;
+        min-width: 100px; }
+
+@media(max-width: 1230px) {
+    .credit-card-form-container{
+        margin-top: 1rem;
+        width: 50%; }
+}
+
+@media(max-width: 620px) {
+    .credit-card-form-container{
+        width: 80%; }
+}

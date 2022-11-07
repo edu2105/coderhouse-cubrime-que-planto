@@ -60,57 +60,58 @@ const Order = ({onSubmitForm}) =>{
     return(
         <div className='order-form-container'>
             <form className='order-form' onSubmit={(e) => onSubmitForm(e, orderData)}>
-                <fieldset className='order-form-fieldset'>
-                    <legend className='order-form-legend'>Orden</legend>
-                    <h3 className='order-form-title'>¿Quién compra?</h3>
+                <section className='order-form-inputs'>
                     <section className="order-form-details">
-                        <div className="form-floating-effect">
-                            <input 
-                                className='floating-input' 
-                                type="text" 
-                                placeholder=' '
-                                name='name'
-                                value={orderData.name}
-                                onChange={onInputChangeHandler}
-                                required />
-                            <label className='floating-label'>Nombre</label>
-                        </div>
-                        <div className="form-floating-effect">
-                            <input 
-                                className='floating-input' 
-                                type="text" 
-                                placeholder=' ' 
-                                name='surname'
-                                value={orderData.surname}
-                                onChange={onInputChangeHandler}
-                                required />
-                            <label className='floating-label'>Apellido</label>
-                        </div>
-                        <div className="form-floating-effect">
-                            <input 
-                                className='floating-input' 
-                                type="email" 
-                                placeholder=' ' 
-                                name='email'
-                                value={orderData.email}
-                                onChange={onInputChangeHandler}
-                                required />
-                            <label className='floating-label'>Email </label>
-                        </div>
-                        <div className="form-floating-effect">
-                            <input 
-                                className='floating-input' 
-                                type="text" 
-                                placeholder=' ' 
-                                name='address'
-                                value={orderData.address}
-                                onChange={onInputChangeHandler}
-                                required />
-                            <label className='floating-label'>Dirección</label>
+                        <h3 className='order-form-title'>¿Quién compra?</h3>
+                        <div className='inputs'>
+                            <div className="form-floating-effect">
+                                <input 
+                                    className='floating-input' 
+                                    type="text" 
+                                    placeholder=' '
+                                    name='name'
+                                    value={orderData.name}
+                                    onChange={onInputChangeHandler}
+                                    required />
+                                <label className='floating-label'>Nombre</label>
+                            </div>
+                            <div className="form-floating-effect">
+                                <input 
+                                    className='floating-input' 
+                                    type="text" 
+                                    placeholder=' ' 
+                                    name='surname'
+                                    value={orderData.surname}
+                                    onChange={onInputChangeHandler}
+                                    required />
+                                <label className='floating-label'>Apellido</label>
+                            </div>
+                            <div className="form-floating-effect">
+                                <input 
+                                    className='floating-input' 
+                                    type="email" 
+                                    placeholder=' ' 
+                                    name='email'
+                                    value={orderData.email}
+                                    onChange={onInputChangeHandler}
+                                    required />
+                                <label className='floating-label'>Email </label>
+                            </div>
+                            <div className="form-floating-effect">
+                                <input 
+                                    className='floating-input' 
+                                    type="text" 
+                                    placeholder=' ' 
+                                    name='address'
+                                    value={orderData.address}
+                                    onChange={onInputChangeHandler}
+                                    required />
+                                <label className='floating-label'>Dirección</label>
+                            </div>
                         </div>
                     </section>
-                    <h3 className='order-form-title'>Método de entrega</h3>
                     <section className="order-form-check">
+                        <h3 className='order-form-title'>Método de entrega</h3>
                         <div className={isDelivery ? 'order' : 'order active'}>
                             <StorefrontIcon className='order-icon' />
                             <p className='order-detail'>Retiralo en <a href="https://www.google.com/maps/place/Habana+y+Segurola/@-34.6007808,-58.520578,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcb77a562dcd87:0x7882eb67703b848!8m2!3d-34.6007885!4d-58.5183861" target="_blank" rel="noopener noreferrer">nuestro local</a></p>
@@ -124,8 +125,8 @@ const Order = ({onSubmitForm}) =>{
                             <p className='order-detail'>Te lo llevamos a tu casa</p>
                         </div>
                     </section>
-                    <h3 className='order-form-title'>Método de pago</h3>
                     <section className="order-form-check">
+                        <h3 className='order-form-title'>Método de pago</h3>
                         <div className={isCard ? 'order' : 'order active'}>
                             <LocalAtmIcon className='order-icon' />
                             <p className='order-detail'>En Efectivo</p>
@@ -139,11 +140,11 @@ const Order = ({onSubmitForm}) =>{
                             <p className='order-detail'>Con tarjeta de Débito/Crédito</p>
                         </div>
                     </section>
-                    <input 
-                        className={enableSubmission ? 'order-form-submit' : 'order-form-submit disabled'}
-                        type="submit" 
-                        value="Finalizar Compra" />
-                </fieldset>
+                </section>
+                <input 
+                    className={enableSubmission ? 'order-form-submit' : 'order-form-submit disabled'}
+                    type="submit" 
+                    value="Finalizar Compra" />
             </form>
             { (isCard && !isCardFormSubmitted) && (<CreditCardForm onSubmitHandler={onCreditCardFormSubmitHandler} />)}
         </div>

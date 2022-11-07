@@ -2,8 +2,9 @@
     position: relative;
     min-height: 100vh;
     width: 100%;
+    padding-top: 9vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(255, 255, 255, .1)), url("../../../images/vida5.jpg");
@@ -60,7 +61,7 @@
                     transition: .5s;
                     box-shadow: -2px -2px 4px var(--header-color-nav-buttons); }
     .cart-container .cart-details-section{
-        width: 40%;
+        width: 40rem;
         margin: 0 1rem;
         background-color: white;
         border-radius: 1rem;
@@ -163,3 +164,12 @@
         .cart-order .cart-order-hint{
             margin-top: 1rem;
             font-size: 1.1rem; }
+
+@media(max-width: 740px) {
+    .cart-container .cart-details-section{
+        width: 75%; }
+        .cart-details-section .cart-details .cart-item-detail{
+            justify-content: space-between; }
+    .cart-empty{
+        width: 80%; }
+}

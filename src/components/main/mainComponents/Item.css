@@ -107,3 +107,21 @@
     50% {background-position: 100% 50%; }
     100% {background-position: 0% 50%; }
 }
+
+@media(max-width: 498px){
+    .item{
+        width: 45vw; }
+    .item-img-container img{
+        width: unset;
+        max-width: 6.25rem;}
+}
+
+@media(max-width: 345px) {
+    .item{
+        width: auto;
+        max-width: 70vw;
+        left: 5%; }
+    .item-img-container img{
+        width: 12.5rem;
+        max-width: 12.5rem;}
+}

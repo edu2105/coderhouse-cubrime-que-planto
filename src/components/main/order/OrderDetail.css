@@ -76,3 +76,13 @@
                     .summary-details h2 strong{
                         margin-top: 1rem;
                         color: var(--main-color-background); }
+
+@media(max-width: 970px) {
+    .order-detail-section{
+        width: 80%; }
+}
+
+@media(max-width: 500px) {
+    .order-detail-section .sub-sections-container{
+        width: 100%; }
+}

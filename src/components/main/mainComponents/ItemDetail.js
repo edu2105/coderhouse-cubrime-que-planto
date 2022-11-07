@@ -36,7 +36,7 @@ const ItemDetail = (product) => {
         <section className="item-detail-section">
             <div className="item-detail-container">  
                 <div className="detail-container">
-                    <img src={product.pictureUrl} alt={product.title} />
+                    <img src={product.detailImg} alt={product.title} />
                     <div className="detail-attributes">
                         <div className="attributes">
                             <h2>{product.title}</h2>

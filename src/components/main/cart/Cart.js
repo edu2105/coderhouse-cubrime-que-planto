@@ -88,7 +88,7 @@ const Cart = () => {
                             <img src={basket} alt="Empty Basket" />
                             <h2>Parece que tu canasta está vacía</h2>
                             <p>Te invitamos a explorar todas nuestras plantas para sumar más vida a tu vida</p>
-                            <Link to="/"><button className="button-home">Ir a Inicio</button></Link>
+                            <button className="button-home">Ir a Inicio</button>
                         </section>
                     </div>
                 ) :
@@ -99,7 +99,7 @@ const Cart = () => {
                                 { cart.map((item) => {
                                 return (
                                     <li className="cart-item-detail" key={item.id}>
-                                        <img src={item.pictureUrl} alt={item.title} />
+                                        <Link to={`/producto/${item.id}`} style={{width: "15%", height: "100%"}}><img src={item.pictureUrl} alt={item.title} /></Link>
                                         <section className="price-details">
                                             <h3>{item.title}</h3>
                                             <div className="quantity-mod">
@@ -109,7 +109,7 @@ const Cart = () => {
                                             </div>
                                         </section>
                                         <section className="price-final">
-                                            <h3>$ {item.finalPrice}</h3>
+                                            <h3>${item.finalPrice}</h3>
                                             <HighlightOffIcon 
                                                 style={{color: "red", cursor: "pointer"}}
                                                 onClick={ () => {deleteItem(item.id)} } />
@@ -124,7 +124,7 @@ const Cart = () => {
                                     fontSize="large"
                                     onClick={clear} />
                                 <span>{totalQty} plantas</span>
-                                <span>Total: $ {totalPrice}</span>
+                                <span>Total: ${totalPrice}</span>
                             </div>
                         </section>
                         <Order onSubmitForm={onOrderFormSubmitHandler} />

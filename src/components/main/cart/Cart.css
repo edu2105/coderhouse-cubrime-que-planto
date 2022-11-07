@@ -85,9 +85,9 @@
                 box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
                 -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
                 .cart-item-detail img{
-                    width: 12%;
+                    width: 100%;
                     height: 100%;
-                    margin-left: 2rem; }
+                    margin-left: 1rem; }
                 .cart-item-detail .price-details{
                     width: 50%;
                     text-align: center;
@@ -173,7 +173,7 @@
 
 @media(max-width: 740px) {
     .cart-container .cart-details-section{
-        width: 75%; }
+        width: 90%; }
         .cart-details-section .cart-details .cart-item-detail{
             justify-content: space-between; }
     .cart-empty{

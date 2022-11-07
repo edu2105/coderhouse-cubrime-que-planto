@@ -103,9 +103,9 @@ const Cart = () => {
                                         <section className="price-details">
                                             <h3>{item.title}</h3>
                                             <div className="quantity-mod">
-                                                <button className="quantity-remove" onClick={() => countHandler(-1, item)}>-</button>
+                                                <button className="quantity-remove" onClick={() => countHandler(-1, item)} disabled={item.quantity === 1 && "disabled"}>-</button>
                                                 <span>{item.quantity} x {item.finalPricePerUnit}</span>
-                                                <button className="quantity-add" onClick={() => countHandler(1, item)}>+</button>
+                                                <button className="quantity-add" onClick={() => countHandler(1, item)} disabled={item.quantity === item.stock && "disabled"}>+</button>
                                             </div>
                                         </section>
                                         <section className="price-final">

@@ -110,6 +110,12 @@
                             color: white;
                             box-shadow: 3px 3px 5px black;
                             cursor: pointer; }
+                            .quantity-mod button:disabled{
+                                cursor: not-allowed;
+                                background-color: white;
+                                box-shadow: unset;
+                                border-color: rgba(118, 118, 118, 0.3);
+                                color: rgba(16, 16, 16, 0.3); }
                         .quantity-mod button:hover{
                             background-color: white;
                             color: grey; }

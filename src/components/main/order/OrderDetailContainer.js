@@ -10,9 +10,13 @@ const OrderDetailContainer = () => {
     const {orderId} = useParams();
     const [error, setError] = useState(false);
     const [order, setOrder] = useState(initialOrder);
+    const [isLoading, setIsLoading] = useState(false);
     const updateOrderDetails = () => {
         getOrders(orderId)
-            .then(result => result.data() ? setOrder(result.data()) : setError(true))
+            .then(result => {
+                setIsLoading(false);
+                result.data() ? setOrder(result.data()) : setError(true)
+            })
             .catch((error) => {
                 console.log(error);
                 setError(true)
@@ -20,6 +24,7 @@ const OrderDetailContainer = () => {
     };
 
     useEffect(() => {
+        setIsLoading(true);
         updateOrderDetails();
     }, [orderId])
     
@@ -29,7 +34,8 @@ const OrderDetailContainer = () => {
             { error && <Navigate to="/oops" replace={true}/> }
             <OrderDetail 
                 id={orderId}
-                order={order} />
+                order={order}
+                loading={isLoading} />
         </>
     )
 };

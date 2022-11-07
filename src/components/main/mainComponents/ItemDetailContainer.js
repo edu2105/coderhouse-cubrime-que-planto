@@ -9,23 +9,30 @@ const {initialProducts} = require('../../../helpers/configuration');
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState(initialProducts[0]);
     const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const {productId} = useParams();
     const updateProducts = () => {
         getProducts("id", productId)
-            .then((result) => result.data() ? setProduct(result.data()) : setError(true))
+            .then((result) => {
+                setIsLoading(false);
+                result.data() ? setProduct(result.data()) : setError(true)
+            })
             .catch((error) => {
                 console.log(error);
                 setError(true);
             })};
 
     useEffect(() => {
+        setIsLoading(true);
         updateProducts();
     }, [productId]);
 
     return(
         <>
             { error && <Navigate to="/oops" replace={true}/> }
-            <ItemDetail {...product} />
+            <ItemDetail 
+                {...product}
+                loading={isLoading} />
         </>
     );
 };

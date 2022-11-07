@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Context } from '../../../context/CartContext';
+import { CartContext } from '../../../context/CartContext';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ import './Cart.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
-    const { cart, totalQty, totalPrice, addItem, deleteItem, clear } = useContext(Context);
+    const { cart, totalQty, totalPrice, addItem, deleteItem, clear } = useContext(CartContext);
     const [swalProps, setSwalProps] = useState({});
     const [enableProgress, setEnableProgress] = useState(false);
     const [orderId, setOrderId] = useState();
@@ -88,7 +88,7 @@ const Cart = () => {
                             <img src={basket} alt="Empty Basket" />
                             <h2>Parece que tu canasta está vacía</h2>
                             <p>Te invitamos a explorar todas nuestras plantas para sumar más vida a tu vida</p>
-                            <button className="button-home">Ir a Inicio</button>
+                            <Link to="/"><button className="button-home">Ir a Inicio</button></Link>
                         </section>
                     </div>
                 ) :

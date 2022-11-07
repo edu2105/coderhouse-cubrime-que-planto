@@ -6,8 +6,8 @@ const PageNotFound = () => {
     const [enableOnMouseMove, setEnableOnMouseMove] = useState(true);
     const [imgPosition, setImgPosition] = useState({x: 0, y: 0});
     const [imgRotation, setImgRotation] = useState(0);
-
     const imgRef = useRef();
+
     const toggleOnMouseMove = () => {
         setEnableOnMouseMove(!enableOnMouseMove); 
     }

@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import './CartWidget.css';
 import Badge from '@mui/material/Badge';
 import { Link } from "react-router-dom";
-import { Context } from '../../../../context/CartContext';
+import { CartContext } from '../../../../context/CartContext';
 
 const CartWidget = ({children}) => {
     const badgeColors = {
         "& .MuiBadge-badge": {
           color: "white",
           backgroundColor: "#d204f5" } };
-    const { totalQty } = useContext(Context);
+    const { totalQty } = useContext(CartContext);
 
     return(
         <div className="cart-widget">

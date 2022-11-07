@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 
 export const MobileContext = createContext();
-export const WidthProvider = ({children}) => {
+export const MobileProvider = ({children}) => {
     const [windowWidth, setWindowWith] = useState(window.innerWidth);
     const [navMobileToggled, setNavMobileToggled] = useState(false);
     let mobileHeader = windowWidth < 941;

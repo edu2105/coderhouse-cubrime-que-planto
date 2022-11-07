@@ -5,16 +5,16 @@ import Main from './components/main/Main';
 import Footer from './components/footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
-import { WidthProvider } from './context/MobileContext';
+import { MobileProvider } from './context/MobileContext';
 
 function App() {  
   return (
     <div className="app">
       <BrowserRouter>
         <CartProvider>
-          <WidthProvider>
+          <MobileProvider>
             <Header/>
-          </WidthProvider>
+          </MobileProvider>
           <Main />
         </CartProvider>
         <Footer />

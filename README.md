@@ -45,6 +45,9 @@ Los detalles se mostrarán al usar el buscador "Ordenes" en el encabezado del si
 ## Tecnología
 Este sitio fue desarrollado usando **ReactJS** para el curso de Front-End Developer de Coderhouse.
 
+### Component Flow Diagram
+![Component Flow Diagram](./src/images/component-flow-diagram.jpg)
+
 ### Nube
 - Firebase
     + Se utiliza la base de datos de **Firestore Database** para operar con todos los productos del vivero.

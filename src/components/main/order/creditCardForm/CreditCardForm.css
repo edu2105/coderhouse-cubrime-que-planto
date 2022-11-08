@@ -21,6 +21,15 @@
     background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.2));
     box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.25),
     -4px -4px 5px 0 rgba(255, 255, 255, 0.2); }
+    .credit-card-form span{
+        background-color: white;
+        border-radius: .5rem;
+        border-color: white;
+        padding: .5rem;
+        border: 1px solid #cccccc;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
     .credit-card-form .form-card-input{
         padding: .4rem;
         margin: 1rem .5rem;
@@ -31,6 +40,20 @@
         font-family: 'Courgette', sans-serif;
         letter-spacing: 2px;
         width: 40%; }
+        .credit-card-form .form-card-input.cvc{
+            width: 5rem; }
+        .credit-card-form .form-card-input.expiry{
+            padding: unset;
+            margin: unset;
+            border: unset;
+            width: 3rem;
+            height: 100%;
+            color: var(--header-color-nav-buttons);
+            font-size: 1.1rem;
+            font-family: 'Courgette', sans-serif;
+            letter-spacing: 2px; }
+        .credit-card-form .form-card-input.expiry:focus{
+            outline: none; }
     .credit-card-form .form-submit{
         margin: 1rem 4rem;
         width: auto;
@@ -62,8 +85,14 @@
 .rccs{
     width: 100%; }
     .rccs__card{
-        width: 290px;
+        width: 22rem;
         min-width: 100px; }
+
+::-webkit-input-placeholder{
+    text-align: center; }
+
+:-moz-placeholder{
+    text-align: center;}
 
 @media(max-width: 1230px) {
     .credit-card-form-container{

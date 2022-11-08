@@ -6,6 +6,8 @@ import './CreditCardForm.css';
 const CreditCardForm = ({onSubmitHandler}) => {
     const [cardData, setCardData] = useState({
         cvc: '',
+        month: '',
+        year: '',
         expiry: '',
         focus: '',
         name: '',
@@ -14,17 +16,39 @@ const CreditCardForm = ({onSubmitHandler}) => {
     
     const handleInputFocus = (e) => {
         setCardData({
-            ...cardData, 
+            ...cardData,
             focus: e.target.name
         });
     };
     
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setCardData({
-            ...cardData,
-            [name] : value
-        });
+        if((name==="number" || name==="cvc" || name==="month" || name==="year") && !isFinite(value)){
+            setCardData({
+                ...cardData,
+                [name]: ""
+            });
+            return;
+        }
+
+        if(name==="month"){
+            setCardData({
+                ...cardData,
+                [name]: value,
+                expiry: value + cardData.year
+            });
+        }else if(name==="year"){
+            setCardData({
+                ...cardData,
+                [name]: value,
+                expiry: cardData.month + value
+            });
+        }else{
+            setCardData({
+                ...cardData,
+                [name] : value
+            });
+        }
     };
   
     return (
@@ -40,8 +64,9 @@ const CreditCardForm = ({onSubmitHandler}) => {
                 onSubmit={(e) => onSubmitHandler(e, cardData)}>
                 <input
                     className='form-card-input'
-                    type="number"
+                    type="text"
                     name="number"
+                    maxLength="16"
                     placeholder="Número de tarjeta"
                     onChange={handleInputChange}
                     onFocus={handleInputFocus}
@@ -56,18 +81,33 @@ const CreditCardForm = ({onSubmitHandler}) => {
                     onFocus={handleInputFocus}
                     value={cardData.name}
                     required />
+                <span>
+                    <input
+                        className='form-card-input expiry'
+                        type="text"
+                        maxLength="2"
+                        name="month"
+                        placeholder="MM"
+                        onChange={handleInputChange}
+                        onFocus={handleInputFocus}
+                        value={cardData.month}
+                        required />
+                    /
+                    <input
+                        className='form-card-input expiry'
+                        type="text"
+                        maxLength="2"
+                        name="year"
+                        placeholder="YY"
+                        onChange={handleInputChange}
+                        onFocus={handleInputFocus}
+                        value={cardData.year}
+                        required />
+                </span>
                 <input
-                    className='form-card-input'
-                    type="date"
-                    name="expiry"
-                    placeholder="Válido hasta"
-                    onChange={handleInputChange}
-                    onFocus={handleInputFocus}
-                    value={cardData.expiry}
-                    required />
-                <input
-                    className='form-card-input'
-                    type="number"
+                    className='form-card-input cvc'
+                    type="text"
+                    maxLength="3"
                     name="cvc"
                     placeholder="CVC"
                     onChange={handleInputChange}

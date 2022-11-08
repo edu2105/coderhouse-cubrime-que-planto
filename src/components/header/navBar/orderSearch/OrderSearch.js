@@ -17,7 +17,17 @@ const OrderSearch = () => {
         totalPrice: "",
         date: ""
     });
-    const clearSearch = () => {
+
+    const onBlurHandler = (e) => {
+        const currentTarget = e.currentTarget;
+        requestAnimationFrame(() => {
+            if(!currentTarget.contains(document.activeElement)){
+                setOrderSearch(false);
+                setOrderResult("");
+            }
+        });
+    };
+    const clearSearch = (e) => {
         setOrderResult("");
         setOrderSearch(false);
         navMobileToggleHandler(false);
@@ -55,7 +65,7 @@ const OrderSearch = () => {
     };
 
     return (
-        <div className="order-search-container">
+        <div className="order-search-container" onBlur={onBlurHandler}>
             <ReceiptIcon 
                 style={{fontSize: "1.5rem", color: "white", cursor: "pointer"}}
                 titleAccess="Mis ordenes"

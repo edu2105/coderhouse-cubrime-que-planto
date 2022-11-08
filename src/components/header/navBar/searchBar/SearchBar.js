@@ -11,7 +11,15 @@ const SearchBar = () => {
     const {navMobileToggleHandler, mobileHeader} = useContext(MobileContext);
     const searchInputRef = useRef();
 
-    const unFocusInput = (e) => e.target.value="";
+    const onBlurHandler = (e) => {
+        e.target.value="";
+        const currentTarget = e.currentTarget;
+        requestAnimationFrame(() => {
+            if(!currentTarget.contains(document.activeElement)){
+                setSearchFinished(false);
+            }
+        });
+    };
     const searchString = (string) => {
         if(!string){
             clearResults();
@@ -37,7 +45,7 @@ const SearchBar = () => {
 
     return (
         <div className={mobileHeader ? 'searchbar-container mobile' : 'searchbar-container'}>
-            <input className='search-input' type='search' ref={searchInputRef} onFocus={() => {setResults([])}} onBlur={unFocusInput} onChange={(e) => searchString(e.target.value)} />
+            <input className='search-input' type='search' ref={searchInputRef} onFocus={() => {setResults([])}} onBlur={onBlurHandler} onChange={(e) => searchString(e.target.value)} />
             <div className="search-background">
                 <SearchIcon className='searchbar-icon'/>
                 <span className='search-placeholder'>Buscar...</span>

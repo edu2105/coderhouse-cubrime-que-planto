@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from '../../../context/CartContext';
@@ -12,7 +12,9 @@ const ItemDetail = ({loading, ...product}) => {
     const wateringLevel = ["Bajo", "Medio", "Alto"];
     const isPricingDiscount = product.pricing.discountPercentage > 0;
     const [isAddToCartClicked, setIsAddToCartClicked] = useState(false);
-    const { addItem } = useContext(CartContext);
+    const { addItem, isInCart } = useContext(CartContext);
+
+    const disableCartBtn = isInCart(product.id);
     const onAdd = (count) => {
         toast.success(`Agregaste ${count} ${product.title} a tu canasta`, {
             position: "bottom-right",
@@ -32,6 +34,10 @@ const ItemDetail = ({loading, ...product}) => {
                 quantity: count
             }, count);
     };
+
+    useEffect(() => {
+        disableCartBtn && setIsAddToCartClicked(true);
+    }, [disableCartBtn])
     
     return(
         <section className="item-detail-section">
@@ -59,7 +65,8 @@ const ItemDetail = ({loading, ...product}) => {
                                     <ItemCount 
                                         extraStyles={isAddToCartClicked ? {display: "none"} : {display: "block"}}
                                         stock={product.stock}
-                                        onAdd={onAdd} />
+                                        onAdd={onAdd}
+                                        disableCartBtn={disableCartBtn} />
                                 </div>
                             </div>
                         </div>

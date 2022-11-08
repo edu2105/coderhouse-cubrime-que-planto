@@ -1,7 +1,7 @@
 # Cubrime Que Planto Website
 
 ## Descripción + tutorial
-Este sitio es un e-commerce del vivero ***Cubrime Que Planto*** en el que se ofrecen productos (plantas) clasificados en 3 categorías
+Sitio de escritorio con compatibilidad móvil de tipo e-commerce del vivero ***Cubrime Que Planto*** en el que se ofrecen productos (plantas) clasificados en 3 categorías
 - Bonsais
 - Plantas de Interior
 - Plantas de Exterior
